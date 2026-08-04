@@ -62,7 +62,6 @@ body::after {
     padding: 50px 24px 80px;
 }
 
-/* ===== HEADER ===== */
 .terminal-header { margin-bottom: 40px; }
 
 .line {
@@ -117,7 +116,6 @@ body::after {
 
 .brand-tagline::before { content: '> '; color: var(--pink); }
 
-/* Кнопка отзывов */
 .reviews-link {
     display: inline-flex;
     align-items: center;
@@ -173,7 +171,6 @@ body::after {
 .system-info .ok { color: var(--green); }
 .system-info .warn { color: var(--orange); }
 
-/* ===== PREVIEW ===== */
 .preview-window {
     margin-bottom: 50px;
     border: 1px solid var(--green-dim);
@@ -239,7 +236,6 @@ body::after {
 
 .preview-footer .ok { color: var(--green); }
 
-/* ===== SECTION ===== */
 .cmd-block {
     margin: 40px 0 24px;
     font-size: 12px;
@@ -250,10 +246,8 @@ body::after {
 .cmd-block span { color: var(--pink); }
 .cmd-block b { color: var(--green); margin-left: 6px; }
 
-/* ===== ПАКЕТЫ — ЗАКРУГЛЁННЫЕ, ОТДЕЛЬНЫЕ ===== */
 .pkg {
     position: relative;
-    /* Уникальный фон для каждого — НЕ сливаются */
     border-radius: 20px;
     padding: 0;
     margin-bottom: 22px;
@@ -261,7 +255,6 @@ body::after {
     transition: all 0.3s;
 }
 
-/* ПРЕМИУМ — золотой */
 .pkg.gold {
     border: 2px solid var(--gold);
     background: 
@@ -274,7 +267,6 @@ body::after {
         inset 0 1px 0 rgba(251, 191, 36, 0.2);
 }
 
-/* ПОЛНЫЙ — синий */
 .pkg.cyan {
     border: 1px solid rgba(0, 229, 255, 0.3);
     background: 
@@ -285,7 +277,6 @@ body::after {
         0 0 30px rgba(0, 229, 255, 0.1);
 }
 
-/* СРЕДНИЙ — розовый */
 .pkg.pink {
     border: 1px solid rgba(255, 45, 117, 0.3);
     background: 
@@ -296,7 +287,6 @@ body::after {
         0 0 30px rgba(255, 45, 117, 0.1);
 }
 
-/* МАЛЕНЬКИЙ — зелёный */
 .pkg.green {
     border: 1px solid rgba(74, 222, 128, 0.3);
     background: 
@@ -307,7 +297,6 @@ body::after {
         0 0 30px rgba(74, 222, 128, 0.1);
 }
 
-/* БЕСПЛАТНЫЙ — фиолетовый */
 .pkg.purple {
     border: 1px solid rgba(192, 132, 252, 0.3);
     background: 
@@ -318,26 +307,8 @@ body::after {
         0 0 30px rgba(192, 132, 252, 0.1);
 }
 
-/* Hover */
-.pkg:hover {
-    transform: translateY(-3px);
-    box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.8),
-        0 0 50px rgba(0, 255, 156, 0.15);
-}
+.pkg:hover { transform: translateY(-3px); }
 
-.pkg.gold:hover {
-    box-shadow: 
-        0 12px 40px rgba(0, 0, 0, 0.8),
-        0 0 50px rgba(251, 191, 36, 0.3);
-}
-
-.pkg.cyan:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 50px rgba(0,229,255,0.25); }
-.pkg.pink:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 50px rgba(255,45,117,0.25); }
-.pkg.green:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 50px rgba(74,222,128,0.25); }
-.pkg.purple:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.8), 0 0 50px rgba(192,132,252,0.25); }
-
-/* Шапка карточки */
 .pkg-head {
     padding: 14px 22px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -391,7 +362,7 @@ body::after {
 .pkg.purple .pkg-status { color: var(--purple); }
 .pkg.purple .pkg-status::before { background: var(--purple); box-shadow: 0 0 8px var(--purple); }
 
-.pkg-body { padding: 22px 22px; }
+.pkg-body { padding: 22px; }
 
 .pkg-title {
     font-family: 'Space Grotesk', sans-serif;
@@ -428,7 +399,6 @@ body::after {
 .pkg-volume b { color: var(--text); }
 .pkg.gold .pkg-volume b { color: var(--gold-bright); }
 
-/* Эксклюзив */
 .pkg-exclusive {
     background: linear-gradient(135deg, rgba(251, 191, 36, 0.12), rgba(245, 158, 11, 0.04));
     border: 1px solid rgba(251, 191, 36, 0.3);
@@ -466,7 +436,6 @@ body::after {
     text-transform: uppercase;
 }
 
-/* Бонус */
 .pkg-bonus {
     background: rgba(251, 191, 36, 0.06);
     border: 1px dashed rgba(251, 191, 36, 0.3);
@@ -484,7 +453,6 @@ body::after {
     font-weight: 700;
 }
 
-/* Фичи */
 .features {
     list-style: none;
     margin-bottom: 22px;
@@ -514,7 +482,6 @@ body::after {
 
 .features li b { color: var(--green); font-weight: 700; }
 
-/* Цена */
 .price-zone {
     display: flex;
     align-items: baseline;
@@ -557,7 +524,6 @@ body::after {
 .pkg.green .price-tag { background: #4ade80; }
 .pkg.purple .price-tag { background: var(--purple); }
 
-/* Кнопка */
 .pkg-btn {
     width: 100%;
     padding: 16px;
@@ -585,25 +551,21 @@ body::after {
     letter-spacing: 6px;
 }
 
-.pkg.gold .pkg-btn {
-    border-color: var(--gold);
-    color: var(--gold-bright);
-}
-.pkg.gold .pkg-btn:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: #1c1407; box-shadow: 0 0 25px rgba(251, 191, 36, 0.5); }
+.pkg.gold .pkg-btn { border-color: var(--gold); color: var(--gold-bright); }
+.pkg.gold .pkg-btn:hover { background: linear-gradient(135deg, var(--gold-bright), var(--gold)); color: #1c1407; }
 
 .pkg.cyan .pkg-btn { border-color: var(--cyan); color: var(--cyan); }
-.pkg.cyan .pkg-btn:hover { background: var(--cyan); color: #000; box-shadow: 0 0 25px var(--cyan); }
+.pkg.cyan .pkg-btn:hover { background: var(--cyan); color: #000; }
 
 .pkg.pink .pkg-btn { border-color: var(--pink); color: var(--pink); }
-.pkg.pink .pkg-btn:hover { background: var(--pink); color: #000; box-shadow: 0 0 25px var(--pink); }
+.pkg.pink .pkg-btn:hover { background: var(--pink); color: #000; }
 
 .pkg.green .pkg-btn { border-color: #4ade80; color: #4ade80; }
-.pkg.green .pkg-btn:hover { background: #4ade80; color: #000; box-shadow: 0 0 25px #4ade80; }
+.pkg.green .pkg-btn:hover { background: #4ade80; color: #000; }
 
 .pkg.purple .pkg-btn { border-color: var(--purple); color: var(--purple); }
-.pkg.purple .pkg-btn:hover { background: var(--purple); color: #000; box-shadow: 0 0 25px var(--purple); }
+.pkg.purple .pkg-btn:hover { background: var(--purple); color: #000; }
 
-/* Бесплатный блок */
 .task-block {
     background: rgba(192, 132, 252, 0.08);
     border: 1px solid rgba(192, 132, 252, 0.3);
@@ -634,7 +596,6 @@ body::after {
 
 .free-foot b { color: var(--purple); }
 
-/* Разделитель */
 .divider {
     text-align: center;
     margin: 40px 0 24px;
@@ -645,7 +606,6 @@ body::after {
 
 .divider span { color: var(--purple); }
 
-/* Нижняя заметка */
 .end-note {
     text-align: center;
     margin-top: 40px;
@@ -661,7 +621,6 @@ body::after {
 
 .end-note b { color: var(--green); }
 
-/* МОДАЛКА */
 .modal {
     display: none;
     position: fixed;
@@ -756,7 +715,6 @@ body::after {
 
 .pay-btn::before { content: '> '; color: var(--pink); }
 
-/* МОДАЛКА ИНСТРУКЦИИ */
 .instr-box {
     max-width: 500px;
     border-color: var(--purple);
@@ -784,7 +742,7 @@ body::after {
 .instr-photo-wrap img {
     width: 100%;
     display: block;
-    max-height: 400px;
+    max-height: 350px;
     object-fit: contain;
     background: #000;
 }
@@ -795,28 +753,26 @@ body::after {
     justify-content: center;
     gap: 8px;
     width: 100%;
-    padding: 14px;
+    padding: 16px;
     background: linear-gradient(135deg, #15803d, #22c55e);
     color: #000;
     text-decoration: none;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 3px;
     transition: all 0.2s;
     border: none;
-    border-top: 1px solid rgba(192, 132, 252, 0.3);
     font-family: 'JetBrains Mono', monospace;
     cursor: pointer;
 }
 
 .save-btn:hover {
     background: linear-gradient(135deg, #22c55e, #4ade80);
-    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
-    letter-spacing: 5px;
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.5);
 }
 
 .save-btn:disabled {
-    opacity: 0.6;
+    opacity: 0.7;
     cursor: wait;
 }
 
@@ -867,7 +823,6 @@ body::after {
     box-shadow: 0 0 25px rgba(192, 132, 252, 0.5);
 }
 
-/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
 @media (max-width: 600px) {
     .brand { font-size: 44px; letter-spacing: 4px; }
     .container { padding: 30px 14px 50px; }
@@ -936,7 +891,7 @@ body::after {
     <section>
         <div class="cmd-block">$ <span>ls</span> ./packages<b>→ 5 found</b></div>
 
-        <!-- Премиум — золотой -->
+        <!-- Премиум -->
         <div class="pkg gold" data-tier="premium">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>01_PREMIUM</b>.tar.gz</div>
@@ -971,7 +926,7 @@ body::after {
             </div>
         </div>
 
-        <!-- Полный — голубой -->
+        <!-- Полный -->
         <div class="pkg cyan" data-tier="full">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>02_FULL</b>.tar.gz</div>
@@ -995,7 +950,7 @@ body::after {
             </div>
         </div>
 
-        <!-- Средний — розовый -->
+        <!-- Средний -->
         <div class="pkg pink" data-tier="medium">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>03_MIDDLE</b>.tar.gz</div>
@@ -1019,7 +974,7 @@ body::after {
             </div>
         </div>
 
-        <!-- Маленький — зелёный -->
+        <!-- Маленький -->
         <div class="pkg green" data-tier="small">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>04_SMALL</b>.tar.gz</div>
@@ -1045,7 +1000,7 @@ body::after {
 
         <div class="divider">--<span>{ OR }</span>--</div>
 
-        <!-- Бесплатный — фиолетовый -->
+        <!-- Бесплатный -->
         <div class="pkg purple">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>FREE</b>.tar.gz</div>
@@ -1057,7 +1012,7 @@ body::after {
                 
                 <div class="task-block">
                     <div class="t-title">// ЗАДАНИЕ В Tik Tok</div>
-                    <p>небольшое задание — <b>комментарии в TikTok.</b> Ниже по кнопке "Получить" будет инструкция и фото для коментариев</p>
+                    <p>небольшое задание — <b>комментарии в TikTok.</b> Ниже по кнопке "Сохранить" будет инструкция и фото для коментариев</p>
                     <p style="margin-top:6px;">скидывать скриншоты с выполненым заданием модератору, юз которого будет указан в инструкции</p>
                     <p style="margin-top:6px;">⏱ примерное время ответа модератора <b>5 минут</b></p>
                 </div>
@@ -1090,7 +1045,7 @@ body::after {
     </div>
 </div>
 
-<!-- МОДАЛКА ИНСТРУКЦИИ -->
+<!-- МОДАЛКА ИНСТРУКЦИИ — С СОХРАНЕНИЕМ В ГАЛЕРЕЮ -->
 <div class="modal" id="instrModal">
     <div class="modal-box instr-box">
         <div class="modal-head instr-head">
@@ -1098,9 +1053,9 @@ body::after {
             <button class="modal-x" onclick="closeInstr()">×</button>
         </div>
         <div class="modal-body instr-body">
+            <!-- ПРЕВЬЮ ФОТО С CATBOX -->
             <div class="instr-photo-wrap">
-                <img src="https://i.postimg.cc/vZqG5pRL/q2xg-Thr-YXVpn-QUYFw-Kfw-BJu-Ci-Gm-WJbfr-IAEH5sq-S632Tz-JCDb-QQNp-Cg-Mjjws-WQyw-rb-Yb-X0x-K4Pzuc6Zxh.jpg" alt="Инструкция">
-                <button id="saveBtn" class="save-btn" onclick="savePhoto()">⬇ СОХРАНИТЬ В ГАЛЕРЕЮ</button>
+                <img src="https://files.catbox.moe/w1882t.jpg" alt="Инструкция">
             </div>
             
             <div class="instr-text">
@@ -1113,7 +1068,19 @@ body::after {
                 <p>Отправить скрины- <a href="https://t.me/yarikduh" target="_blank" class="tg-link">@yarikduh</a></p>
             </div>
             
-            <button class="pkg-btn close-instr-btn" onclick="closeInstr()">ПОНЯТНО</button>
+            <div style="background: linear-gradient(135deg, rgba(74, 222, 128, 0.08), rgba(74, 222, 128, 0.02)); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px;">
+                <p style="color: #4ade80; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">📲 КАК СОХРАНИТЬ:</p>
+                <p style="color: var(--text); font-size: 12px; line-height: 1.5;">После клика файл сразу сохранится в галерею → откройте «Фото» → найдите картинку</p>
+            </div>
+            
+            <!-- КНОПКА СОХРАНЕНИЯ (РАБОТАЕТ В ЯНДЕКС БРАУЗЕРЕ) -->
+            <a href="https://files.catbox.moe/w1882t.jpg" 
+               download="bexga-instruction.jpg" 
+               target="_blank"
+               id="saveBtn"
+               class="save-btn">⬇ СОХРАНИТЬ В ГАЛЕРЕЮ</a>
+            
+            <button class="pkg-btn close-instr-btn" style="margin-top: 10px;" onclick="closeInstr()">ПОНЯТНО</button>
         </div>
     </div>
 </div>
@@ -1126,14 +1093,13 @@ const tiers = {
     small:   { name: 'SMALL',   price: '300' }
 };
 
-// ↓↓↓ ЗАМЕНИ ССЫЛКИ НА СВОИ ↓↓↓
+// ↓↓↓ ЗАМЕНИ СВОИ TELEGRAM-ССЫЛКИ ↓↓↓
 const paymentLinks = {
     crypto: 'https://t.me/your_bot?start=',
     card:   'https://t.me/your_bot?start=card_',
     tg:     'https://t.me/your_bot',
-    other:  'https://t.me/your_support'
+    other:  'https://t.me/yarikduh'
 };
-const freeBotLink = 'https://t.me/your_bot?start=free';
 
 function openPay(tier) {
     const t = tiers[tier];
@@ -1160,37 +1126,6 @@ function openInstruction() {
 function closeInstr() {
     document.getElementById('instrModal').classList.remove('on');
 }
-
-async function savePhoto() {
-    const btn = document.getElementById('saveBtn');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = '⏳ ЗАГРУЗКА...';
-    
-    try {
-        const imageUrl = 'https://i.postimg.cc/vZqG5pRL/q2xg-Thr-YXVpn-QUYFw-Kfw-BJu-Ci-Gm-WJbfr-IAEH5sq-S632Tz-JCDb-QQNp-Cg-Mjjws-WQyw-rb-Yb-X0x-K4Pzuc6Zxh.jpg';
-        const response = await fetch(imageUrl, { mode: 'cors' });
-        if (!response.ok) throw new Error('Не удалось загрузить фото');
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'bexga-instruction.jpg';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-        btn.textContent = '✓ СОХРАНЕНО!';
-        btn.style.background = 'linear-gradient(135deg, #22c55e, #4ade80)';
-        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 3000);
-    } catch (err) {
-        window.open('https://i.postimg.cc/vZqG5pRL/q2xg-Thr-YXVpn-QUYFw-Kfw-BJu-Ci-Gm-WJbfr-IAEH5sq-S632Tz-JCDb-QQNp-Cg-Mjjws-WQyw-rb-Yb-X0x-K4Pzuc6Zxh.jpg', '_blank');
-        btn.textContent = originalText;
-        btn.disabled = false;
-    }
-}
-
-function openFree() { window.open(freeBotLink, '_blank'); }
 
 document.getElementById('payModal').addEventListener('click', e => {
     if (e.target.id === 'payModal') closePay();
@@ -1242,3 +1177,4 @@ setInterval(drawM, 70);
 
 </body>
 </html>
+
