@@ -730,6 +730,7 @@ body::after {
 
 .instr-head .tt b { color: var(--purple); }
 
+/* Фото с GitHub */
 .instr-photo-wrap {
     position: relative;
     margin-bottom: 18px;
@@ -742,12 +743,13 @@ body::after {
 .instr-photo-wrap img {
     width: 100%;
     display: block;
-    max-height: 350px;
+    max-height: 400px;
     object-fit: contain;
     background: #000;
 }
 
-.save-btn {
+/* Кнопка сохранения — простая ссылка с download */
+.save-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -762,18 +764,14 @@ body::after {
     letter-spacing: 3px;
     transition: all 0.2s;
     border: none;
+    border-radius: 14px;
     font-family: 'JetBrains Mono', monospace;
     cursor: pointer;
 }
 
-.save-btn:hover {
+.save-link:hover {
     background: linear-gradient(135deg, #22c55e, #4ade80);
     box-shadow: 0 0 30px rgba(74, 222, 128, 0.5);
-}
-
-.save-btn:disabled {
-    opacity: 0.7;
-    cursor: wait;
 }
 
 .instr-text {
@@ -1012,7 +1010,7 @@ body::after {
                 
                 <div class="task-block">
                     <div class="t-title">// ЗАДАНИЕ В Tik Tok</div>
-                    <p>небольшое задание — <b>комментарии в TikTok.</b> Ниже по кнопке "Сохранить" будет инструкция и фото для коментариев</p>
+                    <p>небольшое задание — <b>комментарии в TikTok.</b> Ниже по кнопке "Получить" будет инструкция и фото для коментариев</p>
                     <p style="margin-top:6px;">скидывать скриншоты с выполненым заданием модератору, юз которого будет указан в инструкции</p>
                     <p style="margin-top:6px;">⏱ примерное время ответа модератора <b>5 минут</b></p>
                 </div>
@@ -1045,7 +1043,7 @@ body::after {
     </div>
 </div>
 
-<!-- МОДАЛКА ИНСТРУКЦИИ — С СОХРАНЕНИЕМ В ГАЛЕРЕЮ -->
+<!-- МОДАЛКА ИНСТРУКЦИИ — С РЕАЛЬНЫМ ФОТО -->
 <div class="modal" id="instrModal">
     <div class="modal-box instr-box">
         <div class="modal-head instr-head">
@@ -1053,9 +1051,9 @@ body::after {
             <button class="modal-x" onclick="closeInstr()">×</button>
         </div>
         <div class="modal-body instr-body">
-            <!-- ПРЕВЬЮ ФОТО С CATBOX -->
+            <!-- ФОТО С GITHUB PAGES -->
             <div class="instr-photo-wrap">
-                <img src="https://files.catbox.moe/w1882t.jpg" alt="Инструкция">
+                <img src="https://anatomiaFar.github.io/bexga.github.io/instr.jpg" alt="Инструкция">
             </div>
             
             <div class="instr-text">
@@ -1068,17 +1066,12 @@ body::after {
                 <p>Отправить скрины- <a href="https://t.me/yarikduh" target="_blank" class="tg-link">@yarikduh</a></p>
             </div>
             
-            <div style="background: linear-gradient(135deg, rgba(74, 222, 128, 0.08), rgba(74, 222, 128, 0.02)); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px;">
-                <p style="color: #4ade80; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px;">📲 КАК СОХРАНИТЬ:</p>
-                <p style="color: var(--text); font-size: 12px; line-height: 1.5;">После клика файл сразу сохранится в галерею → откройте «Фото» → найдите картинку</p>
-            </div>
-            
-            <!-- КНОПКА СОХРАНЕНИЯ (РАБОТАЕТ В ЯНДЕКС БРАУЗЕРЕ) -->
-            <a href="https://files.catbox.moe/w1882t.jpg" 
-               download="bexga-instruction.jpg" 
-               target="_blank"
-               id="saveBtn"
-               class="save-btn">⬇ СОХРАНИТЬ В ГАЛЕРЕЮ</a>
+            <!-- КНОПКА — ПРОСТАЯ ССЫЛКА С DOWNLOAD -->
+            <a href="https://anatomiaFar.github.io/bexga.github.io/instr.jpg" 
+               download="bexga-instruction.jpg"
+               class="save-link">
+                ⬇ СОХРАНИТЬ В ГАЛЕРЕЮ
+            </a>
             
             <button class="pkg-btn close-instr-btn" style="margin-top: 10px;" onclick="closeInstr()">ПОНЯТНО</button>
         </div>
