@@ -19,6 +19,7 @@
     --gold-deep: #b45309;
     --gold-bright: #fde047;
     --purple: #c084fc;
+    --star: #ffb800;
     --crypto: #0098ea;
     --crypto-dark: #0078c4;
     --bg: #0a0a0a;
@@ -40,7 +41,6 @@ body {
     padding: 50px 24px 80px;
 }
 
-/* ===== HEADER ===== */
 .terminal-header { margin-bottom: 40px; }
 
 .line {
@@ -125,7 +125,6 @@ body {
 .system-info .ok { color: var(--green); }
 .system-info .warn { color: var(--orange); }
 
-/* ===== PREVIEW ===== */
 .preview-window {
     margin-bottom: 40px;
     border: 1px solid rgba(255,255,255,0.08);
@@ -186,7 +185,6 @@ body {
 
 .preview-footer .ok { color: var(--green); }
 
-/* ===== SECTION ===== */
 .section-title {
     margin: 40px 0 20px;
     font-size: 15px;
@@ -197,7 +195,6 @@ body {
 
 .section-title b { color: var(--green); }
 
-/* ===== КАРТОЧКИ ===== */
 .pkg {
     position: relative;
     border-radius: 20px;
@@ -377,7 +374,6 @@ body {
 
 .features li b { color: var(--text); font-weight: 700; }
 
-/* Цена */
 .price-zone {
     display: flex;
     align-items: baseline;
@@ -419,7 +415,6 @@ body {
 .pkg.green .price-tag { background: #4ade80; }
 .pkg.purple .price-tag { background: var(--purple); }
 
-/* ===== КНОПКА КУПИТЬ — ОБЩАЯ ===== */
 .btn-buy {
     width: 100%;
     padding: 16px;
@@ -442,9 +437,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,255,156,0.3);
 }
 
-.btn-buy:active {
-    transform: translateY(0);
-}
+.btn-buy:active { transform: translateY(0); }
 
 .pkg.gold .btn-buy { background: var(--gold); color: #1c1407; }
 .pkg.gold .btn-buy:hover { background: #f59e0b; box-shadow: 0 8px 20px rgba(251,191,36,0.4); }
@@ -458,11 +451,7 @@ body {
 .pkg.green .btn-buy { background: #4ade80; color: #000; }
 .pkg.green .btn-buy:hover { background: #22c55e; box-shadow: 0 8px 20px rgba(74,222,128,0.4); }
 
-/* Бесплатный — голубая кнопка Telegram */
-.pkg.purple .btn-buy {
-    background: var(--cyan);
-    color: #000;
-}
+.pkg.purple .btn-buy { background: var(--cyan); color: #000; }
 .pkg.purple .btn-buy:hover { background: #00c4d6; }
 
 .pkg-foot {
@@ -563,7 +552,6 @@ body {
     font-size: 14px;
     color: var(--text-dim);
     font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 .modal-title b { color: var(--green); font-weight: 800; }
@@ -660,15 +648,58 @@ body {
 
 .btn-crypto:active { transform: translateY(0); }
 
-.btn-card {
+/* КНОПКА TELEGRAM STARS — ЖЁЛТАЯ */
+.btn-stars {
     width: 100%;
     padding: 16px;
+    background: linear-gradient(135deg, var(--star), #ff9500);
+    border: none;
+    border-radius: 12px;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(255, 184, 0, 0.3);
+}
+
+.btn-stars-icon {
+    width: 22px;
+    height: 22px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.btn-stars:hover {
+    background: linear-gradient(135deg, #ffc800, #ffa000);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(255, 184, 0, 0.5);
+}
+
+.btn-stars:active { transform: translateY(0); }
+
+/* Кнопка Карты */
+.btn-card {
+    width: 100%;
+    padding: 14px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 12px;
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
@@ -699,7 +730,7 @@ body {
 
 .btn-support:hover { color: var(--text); }
 
-/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ — КНОПКИ ЦЕЛЬНЫЕ ===== */
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
 @media (max-width: 600px) {
     .brand { font-size: 50px; }
     .container { padding: 30px 14px 50px; }
@@ -709,16 +740,14 @@ body {
     .pkg-head { padding: 14px 18px; }
     .reviews-link { padding: 10px 20px; font-size: 13px; }
     
-    /* Кнопки на мобильных — не разрываются */
     .btn-buy {
         font-size: 14px;
         letter-spacing: 0.5px;
         padding: 14px 12px;
-        word-spacing: 0;
         white-space: nowrap;
     }
     
-    .btn-crypto {
+    .btn-crypto, .btn-stars {
         font-size: 14px;
         padding: 14px 12px;
         white-space: nowrap;
@@ -727,7 +756,6 @@ body {
     .btn-card, .btn-support {
         font-size: 14px;
         padding: 14px 12px;
-        white-space: nowrap;
     }
 }
 
@@ -761,7 +789,7 @@ body {
         <div class="system-info">
             <b>Статус:</b> <span class="ok">Онлайн</span> · каталог v2.4.1<br>
             <b>Оплата:</b> <span class="ok">Crypto Bot</span> · BTC · ETH · USDT · TON<br>
-            <b>Обновления:</b> <span class="warn">Каждую неделю</span>
+            <b>Также:</b> <span class="warn">Telegram Stars</span> · оплата звёздами
         </div>
     </header>
 
@@ -896,7 +924,7 @@ body {
 
     <div class="divider">— или —</div>
 
-    <!-- Бесплатный — ИСПРАВЛЕННАЯ КНОПКА -->
+    <!-- Бесплатный -->
     <div class="pkg purple">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
@@ -908,7 +936,6 @@ body {
             
             <div class="tg-hint">в тгк инструкция</div>
             
-            <!-- ИСПРАВЛЕНО: короткий текст кнопки -->
             <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
             <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
         </div>
@@ -933,13 +960,19 @@ body {
 
             <div class="modal-pay-title">Выбери способ оплаты</div>
 
+            <!-- КНОПКА TELEGRAM STARS — ЖЁЛТАЯ -->
+            <a id="starsBtn" href="#" target="_blank" class="btn-stars">
+                <span class="btn-stars-icon">⭐</span>
+                Telegram Stars
+            </a>
+
             <!-- КНОПКА CRYPTO BOT — ГОЛУБАЯ -->
             <a id="cryptoBtn" href="#" target="_blank" class="btn-crypto">
                 <span class="btn-crypto-icon">₿</span>
                 Crypto Bot
             </a>
 
-            <button class="btn-card" onclick="alert('Карты/СБП скоро будут. Пока — Crypto Bot.'); closePay();">
+            <button class="btn-card" onclick="alert('Карты/СБП скоро. Пока — Crypto Bot или Stars.'); closePay();">
                 💳 Карта / СБП
             </button>
 
@@ -949,6 +982,15 @@ body {
 </div>
 
 <script>
+// Ссылки на Telegram каналы (платный доступ через ⭐)
+const starLinks = {
+    premium: 'https://t.me/+xo0g_M3kyc40ZTkx',
+    full:    'https://t.me/+Fi7BZq4_moJkNGYx',
+    medium:  'https://t.me/+4kHMo8w4ZEpiYWZh',
+    small:   'https://t.me/+ejavV0Df4jpkNWIx'
+};
+
+// Ссылки на Crypto Bot (оплата криптой)
 const cryptoLinks = {
     premium: 'https://t.me/send?start=IVLu9L55EyuU',
     full:    'https://t.me/send?start=IViAp4ukbDB0',
@@ -962,7 +1004,11 @@ function openPay(tier, name, price) {
     currentTier = tier;
     document.getElementById('modal-name').textContent = name;
     document.getElementById('modal-sum').textContent = price + ' ₽';
+    
+    // Подставляем ссылки в кнопки
+    document.getElementById('starsBtn').href = starLinks[tier];
     document.getElementById('cryptoBtn').href = cryptoLinks[tier];
+    
     document.getElementById('payModal').classList.add('on');
 }
 
