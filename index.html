@@ -431,7 +431,7 @@ body::after {
 
 .pkg-exclusive-text b {
     color: var(--gold-bright);
-    text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.5));
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -563,38 +563,8 @@ body::after {
 .pkg.green .pkg-btn { border-color: #4ade80; color: #4ade80; }
 .pkg.green .pkg-btn:hover { background: #4ade80; color: #000; }
 
-.pkg.purple .pkg-btn { border-color: var(--purple); color: var(--purple); }
-.pkg.purple .pkg-btn:hover { background: var(--purple); color: #000; }
-
-.task-block {
-    background: rgba(192, 132, 252, 0.08);
-    border: 1px solid rgba(192, 132, 252, 0.3);
-    border-radius: 14px;
-    padding: 14px 18px;
-    margin-bottom: 18px;
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.task-block .t-title {
-    color: var(--purple);
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-.task-block p { color: var(--text); margin-bottom: 6px; }
-.task-block b { color: var(--purple); }
-
-.free-foot {
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 11px;
-    margin-top: 12px;
-    letter-spacing: 1px;
-}
-
-.free-foot b { color: var(--purple); }
+.purple .pkg-btn { border-color: var(--purple); color: var(--purple); }
+.purple .pkg-btn:hover { background: var(--purple); color: #000; box-shadow: 0 0 25px rgba(192, 132, 252, 0.5); }
 
 .divider {
     text-align: center;
@@ -714,112 +684,6 @@ body::after {
 }
 
 .pay-btn::before { content: '> '; color: var(--pink); }
-
-.instr-box {
-    max-width: 500px;
-    border-color: var(--purple);
-    box-shadow: 0 0 40px rgba(192, 132, 252, 0.4);
-}
-
-.instr-body { padding: 20px; }
-
-.instr-head {
-    background: linear-gradient(90deg, rgba(192, 132, 252, 0.12), rgba(192, 132, 252, 0.04));
-    border-bottom: 1px solid rgba(192, 132, 252, 0.3);
-}
-
-.instr-head .tt b { color: var(--purple); }
-
-/* Фото с GitHub */
-.instr-photo-wrap {
-    position: relative;
-    margin-bottom: 18px;
-    border: 1px solid rgba(192, 132, 252, 0.3);
-    border-radius: 16px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.instr-photo-wrap img {
-    width: 100%;
-    display: block;
-    max-height: 400px;
-    object-fit: contain;
-    background: #000;
-}
-
-/* Кнопка сохранения — простая ссылка с download */
-.save-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, #15803d, #22c55e);
-    color: #000;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 14px;
-    letter-spacing: 3px;
-    transition: all 0.2s;
-    border: none;
-    border-radius: 14px;
-    font-family: 'JetBrains Mono', monospace;
-    cursor: pointer;
-}
-
-.save-link:hover {
-    background: linear-gradient(135deg, #22c55e, #4ade80);
-    box-shadow: 0 0 30px rgba(74, 222, 128, 0.5);
-}
-
-.instr-text {
-    color: var(--text);
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    padding: 14px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px dashed rgba(192, 132, 252, 0.3);
-    border-radius: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
-
-.instr-text b {
-    color: var(--purple);
-    font-weight: 700;
-}
-
-.instr-text .tg-link {
-    color: var(--cyan);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 4px 10px;
-    background: rgba(0, 229, 255, 0.1);
-    border-radius: 4px;
-    transition: all 0.2s;
-    display: inline-block;
-    border: 1px solid rgba(0, 229, 255, 0.3);
-    margin: 0 2px;
-}
-
-.instr-text .tg-link:hover {
-    background: rgba(0, 229, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
-    text-shadow: 0 0 8px var(--cyan);
-}
-
-.close-instr-btn {
-    border-color: var(--purple);
-    color: var(--purple);
-}
-
-.close-instr-btn:hover {
-    background: var(--purple);
-    color: #000;
-    box-shadow: 0 0 25px rgba(192, 132, 252, 0.5);
-}
 
 @media (max-width: 600px) {
     .brand { font-size: 44px; letter-spacing: 4px; }
@@ -998,7 +862,7 @@ body::after {
 
         <div class="divider">--<span>{ OR }</span>--</div>
 
-        <!-- Бесплатный -->
+        <!-- Бесплатный — теперь просто ссылка на Telegram -->
         <div class="pkg purple">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>FREE</b>.tar.gz</div>
@@ -1008,15 +872,10 @@ body::after {
                 <h3 class="pkg-title">Бесплатный пак</h3>
                 <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
                 
-                <div class="task-block">
-                    <div class="t-title">// ЗАДАНИЕ В Tik Tok</div>
-                    <p>небольшое задание — <b>комментарии в TikTok.</b> Ниже по кнопке "Получить" будет инструкция и фото для коментариев</p>
-                    <p style="margin-top:6px;">скидывать скриншоты с выполненым заданием модератору, юз которого будет указан в инструкции</p>
-                    <p style="margin-top:6px;">⏱ примерное время ответа модератора <b>5 минут</b></p>
-                </div>
-                
-                <button class="pkg-btn" onclick="openInstruction()">ПОЛУЧИТЬ</button>
-                <div class="free-foot">⏳ выдача пака в течение <b>15-ти минут</b> с момента отправки</div>
+                <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="pkg-btn">
+                    📱 ПОЛУЧИТЬ
+                </a>
+                <div class="pkg-volume" style="margin-top: 14px; text-align: center;">⏳ выдача пака в течение <b>15-ти минут</b></div>
             </div>
         </div>
     </section>
@@ -1039,41 +898,6 @@ body::after {
             <button class="pay-btn" onclick="pay('card')">card [card/sbp]</button>
             <button class="pay-btn" onclick="pay('tg')">telegram-bot</button>
             <button class="pay-btn" onclick="pay('other')">contact support</button>
-        </div>
-    </div>
-</div>
-
-<!-- МОДАЛКА ИНСТРУКЦИИ — С РЕАЛЬНЫМ ФОТО -->
-<div class="modal" id="instrModal">
-    <div class="modal-box instr-box">
-        <div class="modal-head instr-head">
-            <div class="tt">~/instruction.bash <b>FREE</b></div>
-            <button class="modal-x" onclick="closeInstr()">×</button>
-        </div>
-        <div class="modal-body instr-body">
-            <!-- ФОТО С GITHUB PAGES -->
-            <div class="instr-photo-wrap">
-                <img src="https://anatomiaFar.github.io/bexga.github.io/instr.jpg" alt="Инструкция">
-            </div>
-            
-            <div class="instr-text">
-                <p><b>Для получения фри пака нужно:</b></p>
-                <br>
-                <p>Оставить 15 коментов с фото выше. В поиске пишем «<b>детскоэ питаниэ</b>» и оставляем на новых роликах, которым не больше 7 дней!</p>
-                <br>
-                <p>‼️<b>Обязательно ставить лайки на свои комментарии и на комментарии с этим же фото</b>❗️</p>
-                <br>
-                <p>Отправить скрины- <a href="https://t.me/yarikduh" target="_blank" class="tg-link">@yarikduh</a></p>
-            </div>
-            
-            <!-- КНОПКА — ПРОСТАЯ ССЫЛКА С DOWNLOAD -->
-            <a href="https://anatomiaFar.github.io/bexga.github.io/instr.jpg" 
-               download="bexga-instruction.jpg"
-               class="save-link">
-                ⬇ СОХРАНИТЬ В ГАЛЕРЕЮ
-            </a>
-            
-            <button class="pkg-btn close-instr-btn" style="margin-top: 10px;" onclick="closeInstr()">ПОНЯТНО</button>
         </div>
     </div>
 </div>
@@ -1112,27 +936,12 @@ function pay(m) {
     closePay();
 }
 
-function openInstruction() {
-    document.getElementById('instrModal').classList.add('on');
-}
-
-function closeInstr() {
-    document.getElementById('instrModal').classList.remove('on');
-}
-
 document.getElementById('payModal').addEventListener('click', e => {
     if (e.target.id === 'payModal') closePay();
 });
 
-document.getElementById('instrModal').addEventListener('click', e => {
-    if (e.target.id === 'instrModal') closeInstr();
-});
-
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-        closePay();
-        closeInstr();
-    }
+    if (e.key === 'Escape') closePay();
 });
 
 // ===== MATRIX =====
@@ -1170,4 +979,3 @@ setInterval(drawM, 70);
 
 </body>
 </html>
-
