@@ -116,7 +116,6 @@ body::after {
 
 .brand-tagline::before { content: '> '; color: var(--pink); }
 
-/* ===== КНОПКА ОТЗЫВОВ ===== */
 .reviews-link {
     display: inline-flex;
     align-items: center;
@@ -144,9 +143,7 @@ body::after {
     color: var(--cyan);
 }
 
-.reviews-link:active {
-    transform: translateY(0) scale(0.98);
-}
+.reviews-link:active { transform: translateY(0) scale(0.98); }
 
 .reviews-link-dot {
     width: 10px;
@@ -456,10 +453,7 @@ body::after {
     color: #fef3c7;
 }
 
-.pkg-bonus b {
-    color: var(--gold-bright);
-    font-weight: 700;
-}
+.pkg-bonus b { color: var(--gold-bright); font-weight: 700; }
 
 .features {
     list-style: none;
@@ -638,6 +632,7 @@ body::after {
 
 .end-note b { color: var(--green); }
 
+/* МОДАЛКА */
 .modal {
     display: none;
     position: fixed;
@@ -777,7 +772,7 @@ body::after {
 
         <div class="system-info">
             <b>STATUS:</b> <span class="ok">ONLINE</span> · catalog v2.4.1<br>
-            <b>PAYMENT:</b> <span class="ok">SECURE</span> · access instant<br>
+            <b>PAYMENT:</b> <span class="ok">CRYPTO READY</span> · accept BTC/ETH/USDT/TON<br>
             <b>UPDATES:</b> <span class="warn">WEEKLY</span> · last sync 02:14 ago
         </div>
     </header>
@@ -947,10 +942,8 @@ body::after {
         <div class="modal-body">
             <div class="modal-pay-sum" id="modal-sum">--- ₽</div>
             <div class="modal-pay-name">// выбери способ оплаты</div>
-            <button class="pay-btn" onclick="pay('crypto')">crypto [BTC/USDT]</button>
-            <button class="pay-btn" onclick="pay('card')">card [card/sbp]</button>
-            <button class="pay-btn" onclick="pay('tg')">telegram-bot</button>
-            <button class="pay-btn" onclick="pay('other')">contact support</button>
+            <button class="pay-btn" onclick="pay('crypto')">₿ Crypto [BTC/USDT/TON]</button>
+            <button class="pay-btn" onclick="pay('other')">📩 Связаться с поддержкой</button>
         </div>
     </div>
 </div>
@@ -963,12 +956,13 @@ const tiers = {
     small:   { name: 'SMALL',   price: '300' }
 };
 
-// ↓↓↓ ЗАМЕНИ СВОИ TELEGRAM-ССЫЛКИ ДЛЯ ОПЛАТЫ ↓↓↓
+// ✅ ССЫЛКИ НА CRYPTO BOT — ОПЛАТА ПРИХОДИТ ТЕБЕ НА КОШЕЛЁК
 const paymentLinks = {
-    crypto: 'https://t.me/your_bot?start=',
-    card:   'https://t.me/your_bot?start=card_',
-    tg:     'https://t.me/your_bot',
-    other:  'https://t.me/yarikduh'
+    premium: 'https://t.me/send?start=IVLu9L55EyuU',
+    full:    'https://t.me/send?start=IViAp4ukbDB0',
+    medium:  'https://t.me/send?start=IV5ZSmfp9T3m',
+    small:   'https://t.me/send?start=IVHzNlxCJFiS',
+    other:   'https://t.me/yarikduh'
 };
 
 function openPay(tier) {
@@ -985,7 +979,8 @@ function closePay() {
 
 function pay(m) {
     const tier = document.getElementById('payModal')._tier || 'x';
-    window.open(paymentLinks[m] + tier, '_blank');
+    const url = paymentLinks[m];
+    if (url) window.open(url, '_blank');
     closePay();
 }
 
