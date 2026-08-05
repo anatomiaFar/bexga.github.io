@@ -111,48 +111,56 @@ body::after {
     color: var(--text-dim);
     font-size: 14px;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .brand-tagline::before { content: '> '; color: var(--pink); }
 
+/* ===== КНОПКА ОТЗЫВОВ ===== */
 .reviews-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(0, 229, 255, 0.08);
-    border: 1px solid rgba(0, 229, 255, 0.3);
-    border-radius: 30px;
+    gap: 10px;
+    padding: 14px 28px;
+    background: rgba(0, 229, 255, 0.12);
+    border: 2px solid rgba(0, 229, 255, 0.4);
+    border-radius: 40px;
     color: var(--cyan);
     text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
     transition: all 0.2s;
     text-transform: uppercase;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+    margin: 8px 0;
 }
 
 .reviews-link:hover {
-    background: rgba(0, 229, 255, 0.15);
+    background: rgba(0, 229, 255, 0.2);
     border-color: var(--cyan);
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
-    transform: translateY(-1px);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+    transform: translateY(-2px) scale(1.03);
     color: var(--cyan);
 }
 
+.reviews-link:active {
+    transform: translateY(0) scale(0.98);
+}
+
 .reviews-link-dot {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: var(--cyan);
-    box-shadow: 0 0 8px var(--cyan);
+    box-shadow: 0 0 12px var(--cyan), 0 0 24px var(--cyan);
     animation: pulse 1.5s infinite;
+    flex-shrink: 0;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .system-info {
@@ -569,7 +577,6 @@ body::after {
 .pkg.purple .pkg-btn { border-color: var(--purple); color: var(--purple); }
 .pkg.purple .pkg-btn:hover { background: var(--purple); color: #000; box-shadow: 0 0 25px rgba(192, 132, 252, 0.5); }
 
-/* ===== БЕСПЛАТНЫЙ ПАК — ИСПРАВЛЕННЫЙ ===== */
 .pkg-foot {
     margin-top: 14px;
     text-align: center;
@@ -736,6 +743,7 @@ body::after {
     .price-zone { padding: 12px 14px; }
     .features li { font-size: 12px; }
     .modal-box { border-radius: 16px; }
+    .reviews-link { padding: 12px 22px; font-size: 13px; }
 }
 
 @media (max-width: 420px) {
@@ -760,12 +768,12 @@ body::after {
         <div class="brand-block">
             <h1 class="brand">BEXGA</h1>
             <div class="brand-tagline">Секретный магазин</div>
+            
+            <a href="https://t.me/+QbmDWcJNvzg1NWQy" target="_blank" class="reviews-link">
+                <span class="reviews-link-dot"></span>
+                ★ ОТЗЫВЫ
+            </a>
         </div>
-
-        <a href="https://t.me/+QbmDWcJNvzg1NWQy" target="_blank" class="reviews-link">
-            <span class="reviews-link-dot"></span>
-            ★ Отзывы
-        </a>
 
         <div class="system-info">
             <b>STATUS:</b> <span class="ok">ONLINE</span> · catalog v2.4.1<br>
@@ -902,7 +910,7 @@ body::after {
 
         <div class="divider">--<span>{ OR }</span>--</div>
 
-        <!-- Бесплатный — КНОПКА И ПОДПИСЬ -->
+        <!-- Бесплатный -->
         <div class="pkg purple">
             <div class="pkg-head">
                 <div class="pkg-id">pkg/<b>FREE</b>.tar.gz</div>
@@ -912,15 +920,12 @@ body::after {
                 <h3 class="pkg-title">Бесплатный пак</h3>
                 <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
                 
-                <!-- Бейдж с подписью -->
                 <div class="tg-hint">в тгк инструкция</div>
                 
-                <!-- Кнопка -->
                 <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="pkg-btn" style="margin-top: 14px;">
                     📱 ПОЛУЧИТЬ
                 </a>
                 
-                <!-- Подпись под кнопкой -->
                 <div class="pkg-foot">
                     ⏳ выдача пака в течение <b>15-ти минут</b>
                 </div>
@@ -958,7 +963,7 @@ const tiers = {
     small:   { name: 'SMALL',   price: '300' }
 };
 
-// ↓↓↓ ЗАМЕНИ СВОИ TELEGRAM-ССЫЛКИ ДЛЯ ПЛАТНЫХ ПАКЕТОВ ↓↓↓
+// ↓↓↓ ЗАМЕНИ СВОИ TELEGRAM-ССЫЛКИ ДЛЯ ОПЛАТЫ ↓↓↓
 const paymentLinks = {
     crypto: 'https://t.me/your_bot?start=',
     card:   'https://t.me/your_bot?start=card_',
@@ -992,7 +997,7 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closePay();
 });
 
-// ===== MATRIX =====
+// MATRIX
 const canvas = document.getElementById('matrix');
 const ctx = canvas.getContext('2d');
 
@@ -1027,3 +1032,4 @@ setInterval(drawM, 70);
 
 </body>
 </html>
+
