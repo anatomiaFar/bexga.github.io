@@ -88,6 +88,7 @@ body {
     font-weight: 600;
     transition: all 0.2s;
     margin: 8px 0;
+    white-space: nowrap;
 }
 
 .reviews-link:hover {
@@ -418,7 +419,7 @@ body {
 .pkg.green .price-tag { background: #4ade80; }
 .pkg.purple .price-tag { background: var(--purple); }
 
-/* ===== КНОПКА КУПИТЬ ===== */
+/* ===== КНОПКА КУПИТЬ — ОБЩАЯ ===== */
 .btn-buy {
     width: 100%;
     padding: 16px;
@@ -432,6 +433,7 @@ body {
     cursor: pointer;
     letter-spacing: 1px;
     transition: all 0.2s;
+    white-space: nowrap;
 }
 
 .btn-buy:hover {
@@ -564,10 +566,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.modal-title b {
-    color: var(--green);
-    font-weight: 800;
-}
+.modal-title b { color: var(--green); font-weight: 800; }
 
 .modal-close {
     background: none;
@@ -619,7 +618,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* ===== КНОПКА CRYPTO BOT — ГОЛУБАЯ ===== */
+/* КНОПКА CRYPTO BOT — ГОЛУБАЯ */
 .btn-crypto {
     width: 100%;
     padding: 16px;
@@ -700,6 +699,7 @@ body {
 
 .btn-support:hover { color: var(--text); }
 
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ — КНОПКИ ЦЕЛЬНЫЕ ===== */
 @media (max-width: 600px) {
     .brand { font-size: 50px; }
     .container { padding: 30px 14px 50px; }
@@ -708,6 +708,27 @@ body {
     .pkg-title { font-size: 22px; }
     .pkg-head { padding: 14px 18px; }
     .reviews-link { padding: 10px 20px; font-size: 13px; }
+    
+    /* Кнопки на мобильных — не разрываются */
+    .btn-buy {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        padding: 14px 12px;
+        word-spacing: 0;
+        white-space: nowrap;
+    }
+    
+    .btn-crypto {
+        font-size: 14px;
+        padding: 14px 12px;
+        white-space: nowrap;
+    }
+    
+    .btn-card, .btn-support {
+        font-size: 14px;
+        padding: 14px 12px;
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 420px) {
@@ -875,7 +896,7 @@ body {
 
     <div class="divider">— или —</div>
 
-    <!-- Бесплатный -->
+    <!-- Бесплатный — ИСПРАВЛЕННАЯ КНОПКА -->
     <div class="pkg purple">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
@@ -887,7 +908,8 @@ body {
             
             <div class="tg-hint">в тгк инструкция</div>
             
-            <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ В TELEGRAM</a>
+            <!-- ИСПРАВЛЕНО: короткий текст кнопки -->
+            <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
             <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
         </div>
     </div>
@@ -917,7 +939,7 @@ body {
                 Crypto Bot
             </a>
 
-            <button class="btn-card" onclick="alert('Карты/СБП скоро будут доступны. Пока оплата только через Crypto Bot.'); closePay();">
+            <button class="btn-card" onclick="alert('Карты/СБП скоро будут. Пока — Crypto Bot.'); closePay();">
                 💳 Карта / СБП
             </button>
 
@@ -927,7 +949,6 @@ body {
 </div>
 
 <script>
-// Ссылки на инвойсы @CryptoBot
 const cryptoLinks = {
     premium: 'https://t.me/send?start=IVLu9L55EyuU',
     full:    'https://t.me/send?start=IViAp4ukbDB0',
