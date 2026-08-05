@@ -3,27 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BEXGA</title>
+<title>BEXGA — Секретный магазин</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◈</text></svg>">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
     --green: #00ff9c;
-    --green-dim: #00ff9c66;
-    --pink: #ff2d75;
     --cyan: #00e5ff;
+    --pink: #ff2d75;
     --orange: #ff9c00;
     --gold: #fbbf24;
     --gold-deep: #b45309;
     --gold-bright: #fde047;
     --purple: #c084fc;
-    --crypto-color: #26a17b;
-    --crypto-light: #1f8b68;
-    --bg: #000;
-    --text: #fff;
+    --crypto: #0098ea;
+    --crypto-dark: #0078c4;
+    --bg: #0a0a0a;
+    --text: #ffffff;
     --text-dim: #9ca3af;
 }
 
@@ -33,84 +32,44 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
-    position: relative;
-}
-
-body::after {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 999;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
-    background-size: 100% 3px;
-}
-
-.matrix-canvas {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.2;
 }
 
 .container {
-    position: relative;
-    z-index: 1;
     max-width: 760px;
     margin: 0 auto;
     padding: 50px 24px 80px;
 }
 
+/* ===== HEADER ===== */
 .terminal-header { margin-bottom: 40px; }
 
 .line {
     color: var(--text-dim);
     font-size: 13px;
     margin-bottom: 6px;
-    letter-spacing: 0.5px;
 }
 
-.line .prompt { color: var(--pink); margin-right: 6px; }
-.line .path { color: var(--cyan); }
-.line .cursor-blink {
-    display: inline-block;
-    width: 8px;
-    height: 14px;
-    background: var(--green);
-    margin-left: 4px;
-    animation: blink 1s infinite;
-}
+.line .prompt { color: var(--green); margin-right: 8px; }
 .line .ok { color: var(--green); }
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
 
 .brand-block { margin: 30px 0 16px; }
 
 .brand {
-    font-size: 72px;
+    font-size: 76px;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--green) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 20px rgba(0, 255, 156, 0.3));
+    margin-bottom: 12px;
 }
 
 .brand-tagline {
     color: var(--text-dim);
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 16px;
     margin-bottom: 24px;
-    font-family: 'Inter', sans-serif;
 }
 
 .brand-tagline::before { content: '// '; color: var(--green); }
@@ -119,70 +78,58 @@ body::after {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 28px;
-    background: rgba(0, 229, 255, 0.12);
-    border: 2px solid rgba(0, 229, 255, 0.4);
-    border-radius: 40px;
+    padding: 12px 24px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1.5px solid rgba(0, 229, 255, 0.4);
+    border-radius: 30px;
     color: var(--cyan);
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 600;
     transition: all 0.2s;
-    text-transform: uppercase;
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
     margin: 8px 0;
-    font-family: 'Inter', sans-serif;
 }
 
 .reviews-link:hover {
-    background: rgba(0, 229, 255, 0.2);
-    border-color: var(--cyan);
-    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
-    transform: translateY(-2px) scale(1.03);
-    color: var(--cyan);
+    background: rgba(0, 229, 255, 0.15);
+    transform: translateY(-1px);
 }
 
-.reviews-link:active { transform: translateY(0) scale(0.98); }
-
 .reviews-link-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background: var(--cyan);
-    box-shadow: 0 0 12px var(--cyan), 0 0 24px var(--cyan);
+    box-shadow: 0 0 8px var(--cyan);
     animation: pulse 1.5s infinite;
-    flex-shrink: 0;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
 
 .system-info {
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
     padding: 14px 18px;
     margin-top: 20px;
-    background: rgba(10, 15, 20, 0.7);
-    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.03);
     font-size: 13px;
     line-height: 1.8;
     color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
 }
 
 .system-info b { color: var(--green); }
 .system-info .ok { color: var(--green); }
 .system-info .warn { color: var(--orange); }
 
+/* ===== PREVIEW ===== */
 .preview-window {
-    margin-bottom: 50px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(10, 15, 20, 0.85);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.02);
+    border-radius: 18px;
     overflow: hidden;
 }
 
@@ -192,7 +139,7 @@ body::after {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .dot { width: 10px; height: 10px; border-radius: 50%; }
@@ -204,14 +151,11 @@ body::after {
     margin-left: 12px;
     font-size: 12px;
     color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
 }
 
 .window-body {
     aspect-ratio: 16/9;
     background: #000;
-    position: relative;
-    overflow: hidden;
 }
 
 .window-body img {
@@ -227,104 +171,82 @@ body::after {
     background: rgba(0,0,0,0.8);
     border: 1px solid var(--green);
     padding: 4px 10px;
-    border-radius: 8px;
+    border-radius: 6px;
     font-size: 11px;
     color: var(--green);
-    font-family: 'Inter', sans-serif;
 }
 
 .preview-footer {
     padding: 12px 18px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.06);
     font-size: 13px;
     color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
 }
 
 .preview-footer .ok { color: var(--green); }
 
-.cmd-block {
-    margin: 40px 0 24px;
-    font-size: 13px;
+/* ===== SECTION ===== */
+.section-title {
+    margin: 40px 0 20px;
+    font-size: 15px;
     color: var(--text-dim);
-    letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-.cmd-block b { color: var(--green); margin-left: 6px; }
+.section-title b { color: var(--green); }
 
-/* ===== КАРТОЧКИ — СКРУГЛЁННЫЕ, ЦВЕТНЫЕ ===== */
+/* ===== КАРТОЧКИ ===== */
 .pkg {
     position: relative;
-    border-radius: 24px;
+    border-radius: 20px;
     padding: 0;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
     overflow: hidden;
-    transition: all 0.3s;
-    font-family: 'Inter', sans-serif;
+    transition: transform 0.3s;
 }
 
+.pkg:hover { transform: translateY(-3px); }
+
 .pkg.gold {
-    background: linear-gradient(135deg, #1f1611 0%, #2a1f0a 100%);
+    background: linear-gradient(135deg, #1a1208 0%, #2a1f0a 100%);
     border: 2px solid var(--gold);
     box-shadow: 
-        0 8px 32px rgba(0,0,0,0.6),
-        0 0 40px rgba(251,191,36,0.2),
-        inset 0 1px 0 rgba(251,191,36,0.2);
+        0 8px 32px rgba(0,0,0,0.5),
+        0 0 30px rgba(251,191,36,0.15);
 }
 
 .pkg.cyan {
-    background: linear-gradient(135deg, #0a1929 0%, #0f2438 100%);
-    border: 2px solid var(--cyan);
+    background: linear-gradient(135deg, #051824 0%, #0a2a3a 100%);
+    border: 1.5px solid var(--cyan);
     box-shadow: 
-        0 8px 32px rgba(0,0,0,0.6),
-        0 0 40px rgba(0,229,255,0.15),
-        inset 0 1px 0 rgba(0,229,255,0.15);
+        0 6px 24px rgba(0,0,0,0.4),
+        0 0 20px rgba(0,229,255,0.1);
 }
 
 .pkg.pink {
-    background: linear-gradient(135deg, #2a0a14 0%, #3a0f20 100%);
-    border: 2px solid var(--pink);
+    background: linear-gradient(135deg, #1a050d 0%, #2d0a18 100%);
+    border: 1.5px solid var(--pink);
     box-shadow: 
-        0 8px 32px rgba(0,0,0,0.6),
-        0 0 40px rgba(255,45,117,0.15),
-        inset 0 1px 0 rgba(255,45,117,0.15);
+        0 6px 24px rgba(0,0,0,0.4),
+        0 0 20px rgba(255,45,117,0.1);
 }
 
 .pkg.green {
-    background: linear-gradient(135deg, #0a1f14 0%, #0f2a1c 100%);
-    border: 2px solid #4ade80;
+    background: linear-gradient(135deg, #051a0e 0%, #0a2818 100%);
+    border: 1.5px solid #4ade80;
     box-shadow: 
-        0 8px 32px rgba(0,0,0,0.6),
-        0 0 40px rgba(74,222,128,0.15),
-        inset 0 1px 0 rgba(74,222,128,0.15);
+        0 6px 24px rgba(0,0,0,0.4),
+        0 0 20px rgba(74,222,128,0.1);
 }
 
 .pkg.purple {
-    background: linear-gradient(135deg, #1a0a29 0%, #28103f 100%);
-    border: 2px solid var(--purple);
+    background: linear-gradient(135deg, #160520 0%, #251236 100%);
+    border: 1.5px solid var(--purple);
     box-shadow: 
-        0 8px 32px rgba(0,0,0,0.6),
-        0 0 40px rgba(192,132,252,0.15),
-        inset 0 1px 0 rgba(192,132,252,0.15);
+        0 6px 24px rgba(0,0,0,0.4),
+        0 0 20px rgba(192,132,252,0.1);
 }
-
-.pkg:hover {
-    transform: translateY(-4px);
-}
-
-/* Сайдбар слева */
-.pkg::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 5px; height: 100%;
-}
-.pkg.gold::before { background: linear-gradient(180deg, #fde047, #f59e0b); }
-.pkg.cyan::before { background: var(--cyan); }
-.pkg.pink::before { background: var(--pink); }
-.pkg.green::before { background: #4ade80; }
-.pkg.purple::before { background: var(--purple); }
 
 .pkg-head {
     padding: 16px 24px;
@@ -337,9 +259,8 @@ body::after {
 }
 
 .pkg-id {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-dim);
-    font-weight: 500;
 }
 
 .pkg-id b { color: var(--green); }
@@ -349,84 +270,76 @@ body::after {
 .pkg.purple .pkg-id b { color: var(--purple); }
 
 .pkg-status {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1.5px;
     color: var(--green);
     text-transform: uppercase;
+    letter-spacing: 1px;
     padding: 4px 10px;
     background: rgba(0,255,156,0.1);
-    border-radius: 8px;
-    border: 1px solid rgba(0,255,156,0.2);
+    border-radius: 6px;
 }
 
-.pkg.gold .pkg-status { color: var(--gold); background: rgba(251,191,36,0.1); border-color: rgba(251,191,36,0.3); }
-.pkg.cyan .pkg-status { color: var(--cyan); background: rgba(0,229,255,0.1); border-color: rgba(0,229,255,0.2); }
-.pkg.pink .pkg-status { color: var(--pink); background: rgba(255,45,117,0.1); border-color: rgba(255,45,117,0.2); }
-.pkg.green .pkg-status { color: #4ade80; background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.2); }
-.pkg.purple .pkg-status { color: var(--purple); background: rgba(192,132,252,0.1); border-color: rgba(192,132,252,0.2); }
+.pkg.gold .pkg-status { color: var(--gold); background: rgba(251,191,36,0.1); }
+.pkg.cyan .pkg-status { color: var(--cyan); background: rgba(0,229,255,0.1); }
+.pkg.pink .pkg-status { color: var(--pink); background: rgba(255,45,117,0.1); }
+.pkg.green .pkg-status { color: #4ade80; background: rgba(74,222,128,0.1); }
+.pkg.purple .pkg-status { color: var(--purple); background: rgba(192,132,252,0.1); }
 
-.pkg-body { padding: 24px; }
+.pkg-body { padding: 22px 24px; }
 
 .pkg-title {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
     color: var(--text);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-.pkg-title::before { content: '★ '; opacity: 0.5; }
-
-.pkg.gold .pkg-title { color: #fde047; text-shadow: 0 0 12px rgba(251,191,36,0.5); }
-.pkg.cyan .pkg-title { color: var(--cyan); text-shadow: 0 0 12px rgba(0,229,255,0.5); }
-.pkg.pink .pkg-title { color: var(--pink); text-shadow: 0 0 12px rgba(255,45,117,0.5); }
-.pkg.green .pkg-title { color: #4ade80; text-shadow: 0 0 12px rgba(74,222,128,0.5); }
-.pkg.purple .pkg-title { color: var(--purple); text-shadow: 0 0 12px rgba(192,132,252,0.5); }
+.pkg.gold .pkg-title { color: #fde047; }
+.pkg.cyan .pkg-title { color: var(--cyan); }
+.pkg.pink .pkg-title { color: var(--pink); }
+.pkg.green .pkg-title { color: #4ade80; }
+.pkg.purple .pkg-title { color: var(--purple); }
 
 .pkg-volume {
     color: var(--text-dim);
     font-size: 14px;
-    margin-bottom: 18px;
-    font-weight: 500;
+    margin-bottom: 16px;
 }
 
-.pkg-volume b { color: var(--text); font-weight: 700; }
+.pkg-volume b { color: var(--text); }
 .pkg.gold .pkg-volume b { color: #fde047; }
 
 .pkg-exclusive {
     background: rgba(251,191,36,0.08);
     border: 1px solid rgba(251,191,36,0.25);
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin-bottom: 18px;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
     text-align: center;
 }
 
 .pkg-exclusive-title {
     font-size: 11px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     font-weight: 800;
     color: #fde047;
-    margin-bottom: 4px;
 }
 
 .pkg-exclusive-text {
-    font-size: 15px;
+    font-size: 14px;
     color: #fef3c7;
-    font-weight: 500;
+    margin-top: 4px;
 }
 
-.pkg-exclusive-text b {
-    color: #fde047;
-    font-weight: 800;
-}
+.pkg-exclusive-text b { color: #fde047; font-weight: 800; }
 
 .pkg-bonus {
     background: rgba(251,191,36,0.06);
     border: 1px dashed rgba(251,191,36,0.3);
-    border-radius: 12px;
-    padding: 12px 14px;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 18px;
     text-align: center;
     font-size: 13px;
     color: #fef3c7;
@@ -441,7 +354,7 @@ body::after {
 }
 
 .features li {
-    padding: 6px 0 6px 24px;
+    padding: 5px 0 5px 24px;
     position: relative;
     color: var(--text-dim);
     line-height: 1.5;
@@ -467,17 +380,17 @@ body::after {
 .price-zone {
     display: flex;
     align-items: baseline;
-    gap: 14px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 18px;
     flex-wrap: wrap;
-    padding: 16px 20px;
+    padding: 14px 18px;
     background: rgba(0,0,0,0.4);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
+    border-radius: 12px;
 }
 
 .price-now {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 800;
     color: var(--text);
     line-height: 1;
@@ -493,8 +406,8 @@ body::after {
     margin-left: auto;
     background: var(--green);
     color: #000;
-    padding: 6px 12px;
-    border-radius: 8px;
+    padding: 5px 12px;
+    border-radius: 6px;
     font-size: 13px;
     font-weight: 800;
 }
@@ -505,81 +418,59 @@ body::after {
 .pkg.green .price-tag { background: #4ade80; }
 .pkg.purple .price-tag { background: var(--purple); }
 
-/* ===== КНОПКИ — ОБЫЧНЫЙ ТЕКСТ ===== */
-
-/* Crypto — голубая/зелёная тема (USD/TON/BTC) */
-.btn-crypto {
+/* ===== КНОПКА КУПИТЬ ===== */
+.btn-buy {
     width: 100%;
-    padding: 18px;
-    background: linear-gradient(135deg, #0a4d3a, #0d6e54);
+    padding: 16px;
+    background: var(--green);
     border: none;
-    border-radius: 14px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    text-decoration: none;
+    border-radius: 12px;
+    color: #000;
     font-family: 'Inter', sans-serif;
-    box-shadow: 0 4px 12px rgba(13, 110, 84, 0.3);
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
 }
 
-.btn-crypto::before {
-    content: '₿';
-    font-size: 18px;
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+.btn-buy:hover {
+    background: #00cc7d;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0,255,156,0.3);
 }
 
-.btn-crypto:hover {
-    background: linear-gradient(135deg, #0d6e54, #10a37b);
-    box-shadow: 0 6px 20px rgba(13, 110, 84, 0.5);
-    transform: translateY(-2px);
-}
-
-.btn-crypto:active {
+.btn-buy:active {
     transform: translateY(0);
 }
 
-/* Поддержка */
-.btn-support {
-    width: 100%;
-    padding: 16px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 14px;
-    color: var(--text-dim);
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-}
+.pkg.gold .btn-buy { background: var(--gold); color: #1c1407; }
+.pkg.gold .btn-buy:hover { background: #f59e0b; box-shadow: 0 8px 20px rgba(251,191,36,0.4); }
 
-.btn-support:hover {
-    background: rgba(255,255,255,0.08);
-    color: var(--text);
-    border-color: rgba(255,255,255,0.2);
+.pkg.cyan .btn-buy { background: var(--cyan); color: #000; }
+.pkg.cyan .btn-buy:hover { background: #00c4d6; box-shadow: 0 8px 20px rgba(0,229,255,0.4); }
+
+.pkg.pink .btn-buy { background: var(--pink); color: #fff; }
+.pkg.pink .btn-buy:hover { background: #e0275f; box-shadow: 0 8px 20px rgba(255,45,117,0.4); }
+
+.pkg.green .btn-buy { background: #4ade80; color: #000; }
+.pkg.green .btn-buy:hover { background: #22c55e; box-shadow: 0 8px 20px rgba(74,222,128,0.4); }
+
+/* Бесплатный — голубая кнопка Telegram */
+.pkg.purple .btn-buy {
+    background: var(--cyan);
+    color: #000;
 }
+.pkg.purple .btn-buy:hover { background: #00c4d6; }
 
 .pkg-foot {
-    margin-top: 14px;
+    margin-top: 12px;
     text-align: center;
     color: var(--text-dim);
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 12px;
 }
 
-.pkg-foot b { color: var(--purple); font-weight: 700; }
+.pkg-foot b { color: var(--purple); }
 
 .tg-hint {
     display: inline-flex;
@@ -589,7 +480,7 @@ body::after {
     padding: 6px 12px;
     background: rgba(74, 222, 128, 0.06);
     border: 1px dashed rgba(74, 222, 128, 0.3);
-    border-radius: 20px;
+    border-radius: 16px;
     color: #4ade80;
     font-size: 12px;
     font-weight: 600;
@@ -601,16 +492,15 @@ body::after {
     height: 6px;
     border-radius: 50%;
     background: #4ade80;
-    box-shadow: 0 0 8px #4ade80;
+    box-shadow: 0 0 6px #4ade80;
     animation: pulse 1.5s infinite;
 }
 
 .divider {
     text-align: center;
-    margin: 40px 0 24px;
+    margin: 35px 0 20px;
     color: var(--text-dim);
     font-size: 13px;
-    font-family: 'Inter', sans-serif;
 }
 
 .divider span { color: var(--purple); }
@@ -619,45 +509,223 @@ body::after {
     text-align: center;
     margin-top: 40px;
     padding: 14px;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.4);
     color: var(--text-dim);
     font-size: 13px;
 }
 
 .end-note b { color: var(--green); }
 
+/* ===== МОДАЛКА ОПЛАТЫ ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    padding: 16px;
+}
+
+.modal-overlay.on { display: flex; }
+
+.modal {
+    background: #161616;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+    animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-head {
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.modal-title b {
+    color: var(--green);
+    font-weight: 800;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+}
+
+.modal-body { padding: 24px; }
+
+.modal-amount {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.modal-amount-name {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.modal-amount-sum {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+}
+
+.modal-pay-title {
+    font-size: 13px;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== КНОПКА CRYPTO BOT — ГОЛУБАЯ ===== */
+.btn-crypto {
+    width: 100%;
+    padding: 16px;
+    background: var(--crypto);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 152, 234, 0.3);
+}
+
+.btn-crypto-icon {
+    width: 22px;
+    height: 22px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.btn-crypto:hover {
+    background: var(--crypto-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 152, 234, 0.5);
+}
+
+.btn-crypto:active { transform: translateY(0); }
+
+.btn-card {
+    width: 100%;
+    padding: 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-card:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.btn-support {
+    width: 100%;
+    padding: 14px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.btn-support:hover { color: var(--text); }
+
 @media (max-width: 600px) {
-    .brand { font-size: 48px; letter-spacing: 4px; }
+    .brand { font-size: 50px; }
     .container { padding: 30px 14px 50px; }
     .pkg-body { padding: 18px; }
     .price-now { font-size: 30px; }
-    .pkg-title { font-size: 20px; }
+    .pkg-title { font-size: 22px; }
     .pkg-head { padding: 14px 18px; }
-    .price-zone { padding: 14px 16px; }
-    .features li { font-size: 13px; }
-    .reviews-link { padding: 12px 22px; font-size: 13px; }
+    .reviews-link { padding: 10px 20px; font-size: 13px; }
 }
 
 @media (max-width: 420px) {
-    .brand { font-size: 38px; }
+    .brand { font-size: 40px; }
     .container { padding: 24px 12px 40px; }
-    .pkg { border-radius: 18px; }
+    .pkg { border-radius: 16px; }
 }
 </style>
 </head>
 <body>
 
-<canvas class="matrix-canvas" id="matrix"></canvas>
-
 <div class="container">
 
     <header class="terminal-header">
-        <div class="line"><span class="prompt">$</span>connect <span class="path">bexga.store</span><span class="cursor-blink"></span></div>
+        <div class="line"><span class="prompt">$</span>connect bexga.store</div>
         <div class="line"><span class="prompt">$</span>auth --user=guest</div>
         <div class="line"><span class="prompt">$</span>load catalog.bin</div>
-        <div class="line"><span class="prompt">$</span>access granted<span class="ok"> [OK]</span></div>
+        <div class="line"><span class="prompt">$</span>access granted <span class="ok">[OK]</span></div>
 
         <div class="brand-block">
             <h1 class="brand">BEXGA</h1>
@@ -671,7 +739,7 @@ body::after {
 
         <div class="system-info">
             <b>Статус:</b> <span class="ok">Онлайн</span> · каталог v2.4.1<br>
-            <b>Оплата:</b> <span class="ok">Криптовалюта</span> · BTC · ETH · USDT · TON<br>
+            <b>Оплата:</b> <span class="ok">Crypto Bot</span> · BTC · ETH · USDT · TON<br>
             <b>Обновления:</b> <span class="warn">Каждую неделю</span>
         </div>
     </header>
@@ -692,168 +760,203 @@ body::after {
         </div>
     </section>
 
-    <section>
+    <div class="section-title">Доступные <b>пакеты</b></div>
 
-        <!-- Премиум -->
-        <div class="pkg gold">
-            <div class="pkg-head">
-                <div class="pkg-id">pkg/<b>01_PREMIUM</b>.tar.gz</div>
-                <div class="pkg-status">★ ЛУЧШИЙ ВЫБОР</div>
-            </div>
-            <div class="pkg-body">
-                <h3 class="pkg-title">Премиум-пакет</h3>
-                <div class="pkg-volume">📦 <b>3.5 ТБ</b> · полный доступ</div>
-                
-                <div class="pkg-exclusive">
-                    <div class="pkg-exclusive-title">★ ЭКСКЛЮЗИВ ★</div>
-                    <div class="pkg-exclusive-text">видео которых <b>НЕТ НИГДЕ</b></div>
-                </div>
-                
-                <ul class="features">
-                    <li>более <b>47 100</b> тысяч фото и видео</li>
-                    <li>постоянный доступ к архиву и закрытому каналу</li>
-                    <li>пополняем <b>каждый день</b> новый контент</li>
-                    <li>возможность сохранять контент себе</li>
-                </ul>
-                
-                <div class="pkg-bonus">
-                    🎁 Каждый пак ниже <b>бесплатный</b> при покупке премиума
-                </div>
-                
-                <div class="price-zone">
-                    <span class="price-now">1100 ₽</span>
-                    <span class="price-was">3400 ₽</span>
-                    <span class="price-tag">-68%</span>
-                </div>
-                
-                <!-- КНОПКА КРИПТО ПРЕМИУМ -->
-                <a href="https://t.me/send?start=IVLu9L55EyuU" target="_blank" class="btn-crypto">
-                    Оплатить криптой
-                </a>
-                <a href="https://t.me/yarikduh" target="_blank" class="btn-support">
-                    Связаться для оплаты
-                </a>
-            </div>
+    <!-- Премиум -->
+    <div class="pkg gold">
+        <div class="pkg-head">
+            <div class="pkg-id">Пакет <b>01 Премиум</b></div>
+            <div class="pkg-status">★ Лучший выбор</div>
         </div>
-
-        <!-- Полный -->
-        <div class="pkg cyan">
-            <div class="pkg-head">
-                <div class="pkg-id">pkg/<b>02_FULL</b>.tar.gz</div>
-                <div class="pkg-status">★ ПОПУЛЯРНЫЙ</div>
+        <div class="pkg-body">
+            <h3 class="pkg-title">Премиум-пакет</h3>
+            <div class="pkg-volume">📦 <b>3.5 ТБ</b> · полный доступ</div>
+            
+            <div class="pkg-exclusive">
+                <div class="pkg-exclusive-title">★ ЭКСКЛЮЗИВ ★</div>
+                <div class="pkg-exclusive-text">видео которых <b>НЕТ НИГДЕ</b></div>
             </div>
-            <div class="pkg-body">
-                <h3 class="pkg-title">Полный пакет</h3>
-                <div class="pkg-volume">📦 <b>930 ГБ</b> · полный архив</div>
-                <ul class="features">
-                    <li>более <b>21 450</b> фото и видео</li>
-                    <li>постоянный доступ к архиву и закрытому каналу</li>
-                    <li>пополняем каждый день новый контент</li>
-                    <li>возможность сохранять контент себе</li>
-                </ul>
-                <div class="price-zone">
-                    <span class="price-now">720 ₽</span>
-                    <span class="price-was">950 ₽</span>
-                    <span class="price-tag">-25%</span>
-                </div>
-                
-                <!-- КНОПКА КРИПТО ПОЛНЫЙ -->
-                <a href="https://t.me/send?start=IViAp4ukbDB0" target="_blank" class="btn-crypto">
-                    Оплатить криптой
-                </a>
-                <a href="https://t.me/yarikduh" target="_blank" class="btn-support">
-                    Связаться для оплаты
-                </a>
+            
+            <ul class="features">
+                <li>более <b>47 100</b> тысяч фото и видео</li>
+                <li>постоянный доступ к архиву и закрытому каналу</li>
+                <li>пополняем <b>каждый день</b> новый контент</li>
+                <li>возможность сохранять контент себе</li>
+            </ul>
+            
+            <div class="pkg-bonus">
+                🎁 Каждый пак ниже <b>бесплатный</b> при покупке премиума
             </div>
+            
+            <div class="price-zone">
+                <span class="price-now">1100 ₽</span>
+                <span class="price-was">3400 ₽</span>
+                <span class="price-tag">-68%</span>
+            </div>
+            
+            <button class="btn-buy" onclick="openPay('premium', 'Премиум-пакет', '1100')">КУПИТЬ</button>
         </div>
+    </div>
 
-        <!-- Средний -->
-        <div class="pkg pink">
-            <div class="pkg-head">
-                <div class="pkg-id">pkg/<b>03_MIDDLE</b>.tar.gz</div>
-                <div class="pkg-status">★ ОПТИМАЛЬНЫЙ</div>
-            </div>
-            <div class="pkg-body">
-                <h3 class="pkg-title">Средний пакет</h3>
-                <div class="pkg-volume">📦 <b>560 ГБ</b> · оптимальный выбор</div>
-                <ul class="features">
-                    <li>более <b>16 300</b> фото и видео</li>
-                    <li>постоянный доступ к архиву и закрытому каналу</li>
-                    <li>пополняем каждый день новый контент</li>
-                    <li>возможность сохранять контент себе</li>
-                </ul>
-                <div class="price-zone">
-                    <span class="price-now">550 ₽</span>
-                    <span class="price-was">750 ₽</span>
-                    <span class="price-tag">-27%</span>
-                </div>
-                
-                <!-- КНОПКА КРИПТО СРЕДНИЙ -->
-                <a href="https://t.me/send?start=IV5ZSmfp9T3m" target="_blank" class="btn-crypto">
-                    Оплатить криптой
-                </a>
-                <a href="https://t.me/yarikduh" target="_blank" class="btn-support">
-                    Связаться для оплаты
-                </a>
-            </div>
+    <!-- Полный -->
+    <div class="pkg cyan">
+        <div class="pkg-head">
+            <div class="pkg-id">Пакет <b>02 Полный</b></div>
+            <div class="pkg-status">★ Популярный</div>
         </div>
-
-        <!-- Маленький -->
-        <div class="pkg green">
-            <div class="pkg-head">
-                <div class="pkg-id">pkg/<b>04_SMALL</b>.tar.gz</div>
-                <div class="pkg-status">★ СТАРТ</div>
+        <div class="pkg-body">
+            <h3 class="pkg-title">Полный пакет</h3>
+            <div class="pkg-volume">📦 <b>930 ГБ</b> · полный архив</div>
+            <ul class="features">
+                <li>более <b>21 450</b> фото и видео</li>
+                <li>постоянный доступ к архиву и закрытому каналу</li>
+                <li>пополняем каждый день новый контент</li>
+                <li>возможность сохранять контент себе</li>
+            </ul>
+            <div class="price-zone">
+                <span class="price-now">720 ₽</span>
+                <span class="price-was">950 ₽</span>
+                <span class="price-tag">-25%</span>
             </div>
-            <div class="pkg-body">
-                <h3 class="pkg-title">Маленький пакет</h3>
-                <div class="pkg-volume">📦 <b>190 ГБ</b> · стартовый набор</div>
-                <ul class="features">
-                    <li>более <b>8 500</b> фото и видео</li>
-                    <li>постоянный доступ к архиву и закрытому каналу</li>
-                    <li>пополняем каждый день новый контент</li>
-                    <li>возможность сохранять контент себе</li>
-                </ul>
-                <div class="price-zone">
-                    <span class="price-now">300 ₽</span>
-                    <span class="price-was">450 ₽</span>
-                    <span class="price-tag">-33%</span>
-                </div>
-                
-                <!-- КНОПКА КРИПТО МАЛЕНЬКИЙ -->
-                <a href="https://t.me/send?start=IVHzNlxCJFiS" target="_blank" class="btn-crypto">
-                    Оплатить криптой
-                </a>
-                <a href="https://t.me/yarikduh" target="_blank" class="btn-support">
-                    Связаться для оплаты
-                </a>
-            </div>
+            
+            <button class="btn-buy" onclick="openPay('full', 'Полный пакет', '720')">КУПИТЬ</button>
         </div>
+    </div>
 
-        <div class="divider">— или —</div>
-
-        <!-- Бесплатный -->
-        <div class="pkg purple">
-            <div class="pkg-head">
-                <div class="pkg-id">pkg/<b>FREE</b>.tar.gz</div>
-                <div class="pkg-status">★ БЕСПЛАТНО</div>
-            </div>
-            <div class="pkg-body">
-                <h3 class="pkg-title">Бесплатный пак</h3>
-                <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
-                
-                <div class="tg-hint">в тгк инструкция</div>
-                
-                <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-crypto">
-                    Получить в Telegram
-                </a>
-                <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
-            </div>
+    <!-- Средний -->
+    <div class="pkg pink">
+        <div class="pkg-head">
+            <div class="pkg-id">Пакет <b>03 Средний</b></div>
+            <div class="pkg-status">★ Оптимальный</div>
         </div>
-    </section>
+        <div class="pkg-body">
+            <h3 class="pkg-title">Средний пакет</h3>
+            <div class="pkg-volume">📦 <b>560 ГБ</b> · оптимальный выбор</div>
+            <ul class="features">
+                <li>более <b>16 300</b> фото и видео</li>
+                <li>постоянный доступ к архиву и закрытому каналу</li>
+                <li>пополняем каждый день новый контент</li>
+                <li>возможность сохранять контент себе</li>
+            </ul>
+            <div class="price-zone">
+                <span class="price-now">550 ₽</span>
+                <span class="price-was">750 ₽</span>
+                <span class="price-tag">-27%</span>
+            </div>
+            
+            <button class="btn-buy" onclick="openPay('medium', 'Средний пакет', '550')">КУПИТЬ</button>
+        </div>
+    </div>
+
+    <!-- Маленький -->
+    <div class="pkg green">
+        <div class="pkg-head">
+            <div class="pkg-id">Пакет <b>04 Маленький</b></div>
+            <div class="pkg-status">★ Старт</div>
+        </div>
+        <div class="pkg-body">
+            <h3 class="pkg-title">Маленький пакет</h3>
+            <div class="pkg-volume">📦 <b>190 ГБ</b> · стартовый набор</div>
+            <ul class="features">
+                <li>более <b>8 500</b> фото и видео</li>
+                <li>постоянный доступ к архиву и закрытому каналу</li>
+                <li>пополняем каждый день новый контент</li>
+                <li>возможность сохранять контент себе</li>
+            </ul>
+            <div class="price-zone">
+                <span class="price-now">300 ₽</span>
+                <span class="price-was">450 ₽</span>
+                <span class="price-tag">-33%</span>
+            </div>
+            
+            <button class="btn-buy" onclick="openPay('small', 'Маленький пакет', '300')">КУПИТЬ</button>
+        </div>
+    </div>
+
+    <div class="divider">— или —</div>
+
+    <!-- Бесплатный -->
+    <div class="pkg purple">
+        <div class="pkg-head">
+            <div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
+            <div class="pkg-status">★ Бесплатно</div>
+        </div>
+        <div class="pkg-body">
+            <h3 class="pkg-title">Бесплатный пак</h3>
+            <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
+            
+            <div class="tg-hint">в тгк инструкция</div>
+            
+            <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ В TELEGRAM</a>
+            <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
+        </div>
+    </div>
 
     <div class="end-note">$ <b>Доступ открывается автоматически</b> после оплаты</div>
 
 </div>
+
+<!-- МОДАЛКА ВЫБОРА ОПЛАТЫ -->
+<div class="modal-overlay" id="payModal">
+    <div class="modal">
+        <div class="modal-head">
+            <div class="modal-title">Оплата · <b id="modal-name">пакет</b></div>
+            <button class="modal-close" onclick="closePay()">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-amount">
+                <div class="modal-amount-name">К оплате</div>
+                <div class="modal-amount-sum" id="modal-sum">0 ₽</div>
+            </div>
+
+            <div class="modal-pay-title">Выбери способ оплаты</div>
+
+            <!-- КНОПКА CRYPTO BOT — ГОЛУБАЯ -->
+            <a id="cryptoBtn" href="#" target="_blank" class="btn-crypto">
+                <span class="btn-crypto-icon">₿</span>
+                Crypto Bot
+            </a>
+
+            <button class="btn-card" onclick="alert('Карты/СБП скоро будут доступны. Пока оплата только через Crypto Bot.'); closePay();">
+                💳 Карта / СБП
+            </button>
+
+            <a href="https://t.me/yarikduh" target="_blank" class="btn-support">Связаться с поддержкой</a>
+        </div>
+    </div>
+</div>
+
+<script>
+// Ссылки на инвойсы @CryptoBot
+const cryptoLinks = {
+    premium: 'https://t.me/send?start=IVLu9L55EyuU',
+    full:    'https://t.me/send?start=IViAp4ukbDB0',
+    medium:  'https://t.me/send?start=IV5ZSmfp9T3m',
+    small:   'https://t.me/send?start=IVHzNlxCJFiS'
+};
+
+let currentTier = 'premium';
+
+function openPay(tier, name, price) {
+    currentTier = tier;
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-sum').textContent = price + ' ₽';
+    document.getElementById('cryptoBtn').href = cryptoLinks[tier];
+    document.getElementById('payModal').classList.add('on');
+}
+
+function closePay() {
+    document.getElementById('payModal').classList.remove('on');
+}
+
+document.getElementById('payModal').addEventListener('click', e => {
+    if (e.target.id === 'payModal') closePay();
+});
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closePay();
+});
+</script>
 
 </body>
 </html>
