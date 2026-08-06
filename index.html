@@ -509,7 +509,7 @@ body {
 
 .end-note b { color: var(--green); }
 
-/* ===== МОДАЛКА ОПЛАТЫ ===== */
+/* ===== МОДАЛКА ===== */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -606,49 +606,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* КНОПКА CRYPTO BOT — ГОЛУБАЯ */
-.btn-crypto {
-    width: 100%;
-    padding: 16px;
-    background: var(--crypto);
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0, 152, 234, 0.3);
-}
-
-.btn-crypto-icon {
-    width: 22px;
-    height: 22px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 13px;
-}
-
-.btn-crypto:hover {
-    background: var(--crypto-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 152, 234, 0.5);
-}
-
-.btn-crypto:active { transform: translateY(0); }
-
-/* КНОПКА TELEGRAM STARS — ЖЁЛТАЯ */
+/* Stars — жёлтая */
 .btn-stars {
     width: 100%;
     padding: 16px;
@@ -690,29 +648,47 @@ body {
 
 .btn-stars:active { transform: translateY(0); }
 
-/* Кнопка Карты */
-.btn-card {
+/* Crypto — голубая */
+.btn-crypto {
     width: 100%;
-    padding: 14px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    padding: 16px;
+    background: var(--crypto);
+    border: none;
     border-radius: 12px;
-    color: var(--text);
+    color: #fff;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 10px;
     text-decoration: none;
-    display: block;
+    box-shadow: 0 4px 14px rgba(0, 152, 234, 0.3);
 }
 
-.btn-card:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.2);
+.btn-crypto-icon {
+    width: 22px;
+    height: 22px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
 }
+
+.btn-crypto:hover {
+    background: var(--crypto-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 152, 234, 0.5);
+}
+
+.btn-crypto:active { transform: translateY(0); }
 
 .btn-support {
     width: 100%;
@@ -730,7 +706,6 @@ body {
 
 .btn-support:hover { color: var(--text); }
 
-/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
 @media (max-width: 600px) {
     .brand { font-size: 50px; }
     .container { padding: 30px 14px 50px; }
@@ -747,7 +722,7 @@ body {
         white-space: nowrap;
     }
     
-    .btn-crypto, .btn-stars {
+    .btn-stars, .btn-crypto {
         font-size: 14px;
         padding: 14px 12px;
         white-space: nowrap;
@@ -945,7 +920,7 @@ body {
 
 </div>
 
-<!-- МОДАЛКА ВЫБОРА ОПЛАТЫ -->
+<!-- МОДАЛКА ОПЛАТЫ -->
 <div class="modal-overlay" id="payModal">
     <div class="modal">
         <div class="modal-head">
@@ -960,21 +935,17 @@ body {
 
             <div class="modal-pay-title">Выбери способ оплаты</div>
 
-            <!-- КНОПКА TELEGRAM STARS — ЖЁЛТАЯ -->
+            <!-- ⭐ КНОПКА TELEGRAM STARS — открывает БОТА с параметром пакета -->
             <a id="starsBtn" href="#" target="_blank" class="btn-stars">
                 <span class="btn-stars-icon">⭐</span>
                 Telegram Stars
             </a>
 
-            <!-- КНОПКА CRYPTO BOT — ГОЛУБАЯ -->
+            <!-- ₿ КНОПКА CRYPTO BOT -->
             <a id="cryptoBtn" href="#" target="_blank" class="btn-crypto">
                 <span class="btn-crypto-icon">₿</span>
                 Crypto Bot
             </a>
-
-            <button class="btn-card" onclick="alert('Карты/СБП скоро. Пока — Crypto Bot или Stars.'); closePay();">
-                💳 Карта / СБП
-            </button>
 
             <a href="https://t.me/yarikduh" target="_blank" class="btn-support">Связаться с поддержкой</a>
         </div>
@@ -982,15 +953,10 @@ body {
 </div>
 
 <script>
-// Ссылки на Telegram каналы (платный доступ через ⭐)
-const starLinks = {
-    premium: 'https://t.me/+xo0g_M3kyc40ZTkx',
-    full:    'https://t.me/+Fi7BZq4_moJkNGYx',
-    medium:  'https://t.me/+4kHMo8w4ZEpiYWZh',
-    small:   'https://t.me/+ejavV0Df4jpkNWIx'
-};
+// ↓↓↓ ЗАМЕНИ НА USERNAME СВОЕГО БОТА (тот что BotFather дал) ↓↓↓
+// Например если бот называется @bexga_paybot — пиши 'bexga_paybot'
+const starsBot = 'https://t.me/bexga_paybot?start=';
 
-// Ссылки на Crypto Bot (оплата криптой)
 const cryptoLinks = {
     premium: 'https://t.me/send?start=IVLu9L55EyuU',
     full:    'https://t.me/send?start=IViAp4ukbDB0',
@@ -998,15 +964,12 @@ const cryptoLinks = {
     small:   'https://t.me/send?start=IVHzNlxCJFiS'
 };
 
-let currentTier = 'premium';
-
 function openPay(tier, name, price) {
-    currentTier = tier;
     document.getElementById('modal-name').textContent = name;
     document.getElementById('modal-sum').textContent = price + ' ₽';
     
-    // Подставляем ссылки в кнопки
-    document.getElementById('starsBtn').href = starLinks[tier];
+    // Подставляем ссылки
+    document.getElementById('starsBtn').href = starsBot + tier;
     document.getElementById('cryptoBtn').href = cryptoLinks[tier];
     
     document.getElementById('payModal').classList.add('on');
@@ -1027,3 +990,4 @@ document.addEventListener('keydown', e => {
 
 </body>
 </html>
+
