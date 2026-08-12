@@ -19,6 +19,7 @@
     --gold-deep: #b45309;
     --gold-bright: #fde047;
     --purple: #c084fc;
+    --purple-light: #d8b4fe;
     --star: #ffb800;
     --crypto: #0098ea;
     --crypto-dark: #0078c4;
@@ -93,8 +94,8 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .system-info {
@@ -204,10 +205,60 @@ body {
     box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(74,222,128,0.1);
 }
 
+/* ===== БЕСПЛАТНЫЙ ПАК — С ОСОБОЙ ОБВОДКОЙ ===== */
 .pkg.purple {
-    background: linear-gradient(135deg, #160520 0%, #251236 100%);
-    border: 1.5px solid var(--purple);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(192,132,252,0.1);
+    position: relative;
+    background: linear-gradient(135deg, #1a0a2e 0%, #2d1444 50%, #1a0a2e 100%);
+    border: 2px solid var(--purple);
+    box-shadow: 
+        0 8px 32px rgba(192, 132, 252, 0.3),
+        0 0 40px rgba(192, 132, 252, 0.4),
+        inset 0 1px 0 rgba(192, 132, 252, 0.2);
+    animation: freeGlow 3s ease-in-out infinite;
+}
+
+@keyframes freeGlow {
+    0%, 100% {
+        box-shadow: 
+            0 8px 32px rgba(192, 132, 252, 0.3),
+            0 0 40px rgba(192, 132, 252, 0.4),
+            inset 0 1px 0 rgba(192, 132, 252, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 8px 40px rgba(192, 132, 252, 0.5),
+            0 0 60px rgba(192, 132, 252, 0.6),
+            inset 0 1px 0 rgba(192, 132, 252, 0.3);
+    }
+}
+
+/* Бейдж "FREE" сверху карточки */
+.free-badge {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--purple), #a855f7);
+    color: #fff;
+    padding: 5px 14px;
+    border-radius: 0 0 12px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.4);
+}
+
+.free-badge::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    margin-right: 6px;
+    vertical-align: middle;
+    box-shadow: 0 0 8px #4ade80;
+    animation: pulse 1.5s infinite;
 }
 
 .pkg-head {
@@ -220,12 +271,17 @@ body {
     gap: 8px;
 }
 
+.pkg.purple .pkg-head {
+    /* Чуть больше padding сверху чтобы был зазор для бейджа */
+    padding-top: 26px;
+}
+
 .pkg-id { font-size: 13px; color: var(--text-dim); }
 .pkg-id b { color: var(--green); }
 .pkg.cyan .pkg-id b { color: var(--cyan); }
 .pkg.pink .pkg-id b { color: var(--pink); }
 .pkg.green .pkg-id b { color: #4ade80; }
-.pkg.purple .pkg-id b { color: var(--purple); }
+.pkg.purple .pkg-id b { color: var(--purple-light); }
 
 .pkg-status {
     font-size: 11px;
@@ -241,7 +297,7 @@ body {
 .pkg.cyan .pkg-status { color: var(--cyan); background: rgba(0,229,255,0.1); }
 .pkg.pink .pkg-status { color: var(--pink); background: rgba(255,45,117,0.1); }
 .pkg.green .pkg-status { color: #4ade80; background: rgba(74,222,128,0.1); }
-.pkg.purple .pkg-status { color: var(--purple); background: rgba(192,132,252,0.1); }
+.pkg.purple .pkg-status { color: var(--purple-light); background: rgba(192,132,252,0.15); }
 
 .pkg-body { padding: 22px 24px; }
 
@@ -256,7 +312,7 @@ body {
 .pkg.cyan .pkg-title { color: var(--cyan); }
 .pkg.pink .pkg-title { color: var(--pink); }
 .pkg.green .pkg-title { color: #4ade80; }
-.pkg.purple .pkg-title { color: var(--purple); }
+.pkg.purple .pkg-title { color: var(--purple-light); }
 
 .pkg-volume {
     color: var(--text-dim);
@@ -266,6 +322,7 @@ body {
 
 .pkg-volume b { color: var(--text); }
 .pkg.gold .pkg-volume b { color: #fde047; }
+.pkg.purple .pkg-volume b { color: var(--purple-light); }
 
 .pkg-exclusive {
     background: rgba(251,191,36,0.08);
@@ -328,7 +385,7 @@ body {
 .pkg.cyan .features li::before { color: var(--cyan); }
 .pkg.pink .features li::before { color: var(--pink); }
 .pkg.green .features li::before { color: #4ade80; }
-.pkg.purple .features li::before { color: var(--purple); }
+.pkg.purple .features li::before { color: var(--purple-light); }
 
 .features li b { color: var(--text); font-weight: 700; }
 
@@ -426,8 +483,8 @@ body {
 .pkg.green .btn-buy { background: #4ade80; color: #000; }
 .pkg.green .btn-buy:hover { background: #22c55e; box-shadow: 0 8px 20px rgba(74,222,128,0.4); }
 
-.pkg.purple .btn-buy { background: var(--cyan); color: #000; }
-.pkg.purple .btn-buy:hover { background: #00c4d6; }
+.pkg.purple .btn-buy { background: var(--purple); color: #fff; box-shadow: 0 4px 14px rgba(192,132,252,0.4); }
+.pkg.purple .btn-buy:hover { background: #a855f7; box-shadow: 0 6px 20px rgba(192,132,252,0.6); transform: translateY(-2px); }
 
 .pkg-foot {
     margin-top: 12px;
@@ -435,7 +492,7 @@ body {
     color: var(--text-dim);
     font-size: 12px;
 }
-.pkg-foot b { color: var(--purple); }
+.pkg-foot b { color: var(--purple-light); }
 
 .tg-hint {
     display: inline-flex;
@@ -785,9 +842,29 @@ body {
         </div>
     </section>
 
-    <div class="section-title">Доступные <b>пакеты</b></div>
+    <!-- ===== БЕСПЛАТНЫЙ ПАК — ПЕРВЫЙ (сверху) ===== -->
+    <div class="pkg purple">
+        <div class="free-badge">FREE</div>
+        <div class="pkg-head">
+            <div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
+            <div class="pkg-status">★ Бесплатно</div>
+        </div>
+        <div class="pkg-body">
+            <h3 class="pkg-title">Бесплатный пак</h3>
+            <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
+            
+            <div class="tg-hint">в тгк инструкция</div>
+            
+            <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
+            <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
+        </div>
+    </div>
 
-    <!-- Премиум — 1100₽ / 750⭐ -->
+    <div class="divider">— или купи платный —</div>
+
+    <div class="section-title">Платные <b>пакеты</b></div>
+
+    <!-- Премиум -->
     <div class="pkg gold">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>01 Премиум</b></div>
@@ -826,7 +903,7 @@ body {
         </div>
     </div>
 
-    <!-- Полный — 720₽ / 550⭐ -->
+    <!-- Полный -->
     <div class="pkg cyan">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>02 Полный</b></div>
@@ -854,7 +931,7 @@ body {
         </div>
     </div>
 
-    <!-- Средний — 550₽ / 380⭐ -->
+    <!-- Средний -->
     <div class="pkg pink">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>03 Средний</b></div>
@@ -882,7 +959,7 @@ body {
         </div>
     </div>
 
-    <!-- Маленький — 300₽ / 200⭐ -->
+    <!-- Маленький -->
     <div class="pkg green">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>04 Маленький</b></div>
@@ -907,25 +984,6 @@ body {
             </div>
             
             <button class="btn-buy" onclick="openPay('small', 'Маленький пакет', '300')">КУПИТЬ</button>
-        </div>
-    </div>
-
-    <div class="divider">— или —</div>
-
-    <!-- Бесплатный -->
-    <div class="pkg purple">
-        <div class="pkg-head">
-            <div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
-            <div class="pkg-status">★ Бесплатно</div>
-        </div>
-        <div class="pkg-body">
-            <h3 class="pkg-title">Бесплатный пак</h3>
-            <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
-            
-            <div class="tg-hint">в тгк инструкция</div>
-            
-            <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
-            <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
         </div>
     </div>
 
@@ -980,7 +1038,6 @@ const cryptoLinks = {
     small:   'https://t.me/send?start=IVHzNlxCJFiS'
 };
 
-// ТВОИ ЦЕНЫ В ЗВЁЗДАХ
 const starsPrices = {
     premium: '750',
     full:    '550',
@@ -1018,5 +1075,4 @@ document.addEventListener('keydown', e => {
 
 </body>
 </html>
-
 
