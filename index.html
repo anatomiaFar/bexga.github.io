@@ -996,16 +996,19 @@ body {
 
             <div class="modal-pay-title">Выбери способ оплаты</div>
 
+            <!-- ⭐ КНОПКА TELEGRAM STARS — открывает ТВОЕГО БОТА -->
             <a id="starsBtn" href="#" target="_blank" class="btn-stars">
                 <span class="btn-stars-icon">⭐</span>
                 Telegram Stars
             </a>
 
+            <!-- ₿ КНОПКА CRYPTO BOT -->
             <a id="cryptoBtn" href="#" target="_blank" class="btn-crypto">
                 <span class="btn-crypto-icon">₿</span>
                 Crypto Bot
             </a>
 
+            <!-- 💳 КНОПКА КАРТА — чат с модератором -->
             <a id="cardBtn" href="https://t.me/yarikduh" target="_blank" class="btn-card">
                 <span class="btn-card-icon">💳</span>
                 Карта / СБП
@@ -1018,14 +1021,7 @@ body {
 </div>
 
 <script>
-const starsBot = 'https://t.me/Bexga_paybot?start=';
-
-const starsChannels = {
-    premium: 'https://t.me/+1DflV4CQ8IozZjIy',
-    full:    'https://t.me/+C-8m8Z3cTxxjYmMy',
-    medium:  'https://t.me/+aNNct4r7mko2NDg6',
-    small:   'https://t.me/+mvgwu1dpP-E0NjIy'
-};
+const starsBotTg = 'tg://resolve?domain=Bexga_paybot&start=';
 
 const cryptoLinks = {
     premium: 'https://t.me/send?start=IVLu9L55EyuU',
@@ -1050,8 +1046,8 @@ function openPay(tier, name, price) {
         document.getElementById('modal-stars').textContent = `⭐ или ${starsCount} звёзд`;
     }
     
-    // Подставляем ссылки
-    document.getElementById('starsBtn').href = starsChannels[tier];
+    // Stars — tg:// протокол → откроет ПРИЛОЖЕНИЕ Telegram с ботом
+    document.getElementById('starsBtn').href = starsBotTg + tier;
     document.getElementById('cryptoBtn').href = cryptoLinks[tier];
     
     document.getElementById('payModal').classList.add('on');
@@ -1072,4 +1068,3 @@ document.addEventListener('keydown', e => {
 
 </body>
 </html>
-
