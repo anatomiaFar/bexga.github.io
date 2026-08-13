@@ -205,7 +205,6 @@ body {
     box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(74,222,128,0.1);
 }
 
-/* ===== БЕСПЛАТНЫЙ ПАК — С ОСОБОЙ ОБВОДКОЙ ===== */
 .pkg.purple {
     position: relative;
     background: linear-gradient(135deg, #1a0a2e 0%, #2d1444 50%, #1a0a2e 100%);
@@ -232,7 +231,6 @@ body {
     }
 }
 
-/* Бейдж "FREE" сверху карточки */
 .free-badge {
     position: absolute;
     top: -1px;
@@ -271,10 +269,7 @@ body {
     gap: 8px;
 }
 
-.pkg.purple .pkg-head {
-    /* Чуть больше padding сверху чтобы был зазор для бейджа */
-    padding-top: 26px;
-}
+.pkg.purple .pkg-head { padding-top: 26px; }
 
 .pkg-id { font-size: 13px; color: var(--text-dim); }
 .pkg-id b { color: var(--green); }
@@ -842,7 +837,6 @@ body {
         </div>
     </section>
 
-    <!-- ===== БЕСПЛАТНЫЙ ПАК — ПЕРВЫЙ (сверху) ===== -->
     <div class="pkg purple">
         <div class="free-badge">FREE</div>
         <div class="pkg-head">
@@ -864,7 +858,6 @@ body {
 
     <div class="section-title">Платные <b>пакеты</b></div>
 
-    <!-- Премиум -->
     <div class="pkg gold">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>01 Премиум</b></div>
@@ -903,7 +896,6 @@ body {
         </div>
     </div>
 
-    <!-- Полный -->
     <div class="pkg cyan">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>02 Полный</b></div>
@@ -931,7 +923,6 @@ body {
         </div>
     </div>
 
-    <!-- Средний -->
     <div class="pkg pink">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>03 Средний</b></div>
@@ -959,7 +950,6 @@ body {
         </div>
     </div>
 
-    <!-- Маленький -->
     <div class="pkg green">
         <div class="pkg-head">
             <div class="pkg-id">Пакет <b>04 Маленький</b></div>
@@ -991,7 +981,6 @@ body {
 
 </div>
 
-<!-- МОДАЛКА -->
 <div class="modal-overlay" id="payModal">
     <div class="modal">
         <div class="modal-head">
@@ -1031,6 +1020,13 @@ body {
 <script>
 const starsBot = 'https://t.me/Bexga_paybot?start=';
 
+const starsChannels = {
+    premium: 'https://t.me/+1DflV4CQ8IozZjIy',
+    full:    'https://t.me/+C-8m8Z3cTxxjYmMy',
+    medium:  'https://t.me/+aNNct4r7mko2NDg6',
+    small:   'https://t.me/+mvgwu1dpP-E0NjIy'
+};
+
 const cryptoLinks = {
     premium: 'https://t.me/send?start=IVLu9L55EyuU',
     full:    'https://t.me/send?start=IViAp4ukbDB0',
@@ -1054,7 +1050,8 @@ function openPay(tier, name, price) {
         document.getElementById('modal-stars').textContent = `⭐ или ${starsCount} звёзд`;
     }
     
-    document.getElementById('starsBtn').href = starsBot + tier;
+    // Подставляем ссылки
+    document.getElementById('starsBtn').href = starsChannels[tier];
     document.getElementById('cryptoBtn').href = cryptoLinks[tier];
     
     document.getElementById('payModal').classList.add('on');
