@@ -6,7 +6,7 @@
 <title>BEXGA — Секретный магазин</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◈</text></svg>">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -41,7 +41,7 @@ body {
 
 .terminal-header { margin-bottom: 40px; }
 
-.line { color: var(--text-dim); font-size: 13px; margin-bottom: 6px; }
+.line { color: var(--text-dim); font-size: 13px; margin-bottom: 6px; font-family: 'JetBrains Mono', monospace; }
 .line .prompt { color: var(--green); margin-right: 8px; }
 .line .ok { color: var(--green); }
 
@@ -50,7 +50,7 @@ body {
 .brand {
     font-size: 76px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--green) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -849,7 +849,8 @@ body {
             
             <div class="tg-hint">в тгк инструкция</div>
             
-            <a href="https://t.me/+Z2URU68DYJdjOWQy" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
+            <!-- ↓↓↓ ЗАМЕНИЛ @yarikduh → @pruterix ↓↓↓ -->
+            <a href="https://t.me/pruterix" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
             <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
         </div>
     </div>
@@ -996,7 +997,7 @@ body {
 
             <div class="modal-pay-title">Выбери способ оплаты</div>
 
-            <!-- ⭐ КНОПКА TELEGRAM STARS — открывает ТВОЕГО БОТА -->
+            <!-- ⭐ КНОПКА TELEGRAM STARS — открывает БОТА -->
             <a id="starsBtn" href="#" target="_blank" class="btn-stars">
                 <span class="btn-stars-icon">⭐</span>
                 Telegram Stars
@@ -1008,14 +1009,15 @@ body {
                 Crypto Bot
             </a>
 
-            <!-- 💳 КНОПКА КАРТА — чат с модератором -->
-            <a id="cardBtn" href="https://t.me/yarikduh" target="_blank" class="btn-card">
+            <!-- 💳 КНОПКА КАРТА — ЗАМЕНИЛ @yarikduh → @pruterix -->
+            <a id="cardBtn" href="https://t.me/pruterix" target="_blank" class="btn-card">
                 <span class="btn-card-icon">💳</span>
                 Карта / СБП
             </a>
             <div class="btn-card-hint">оплата через модератора — напишите сумму и способ</div>
 
-            <a href="https://t.me/yarikduh" target="_blank" class="btn-support">Связаться с поддержкой</a>
+            <!-- ↓↓↓ ЗАМЕНИЛ @yarikduh → @pruterix ↓↓↓ -->
+            <a href="https://t.me/pruterix" target="_blank" class="btn-support">Связаться с поддержкой</a>
         </div>
     </div>
 </div>
@@ -1046,7 +1048,6 @@ function openPay(tier, name, price) {
         document.getElementById('modal-stars').textContent = `⭐ или ${starsCount} звёзд`;
     }
     
-    // Stars — tg:// протокол → откроет ПРИЛОЖЕНИЕ Telegram с ботом
     document.getElementById('starsBtn').href = starsBotTg + tier;
     document.getElementById('cryptoBtn').href = cryptoLinks[tier];
     
@@ -1068,3 +1069,4 @@ document.addEventListener('keydown', e => {
 
 </body>
 </html>
+
