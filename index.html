@@ -11,30 +11,30 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --green: #00ff9c;
-    --cyan: #00e5ff;
-    --pink: #ff2d75;
-    --orange: #ff9c00;
-    --gold: #fbbf24;
-    --gold-deep: #b45309;
-    --gold-bright: #fde047;
-    --purple: #c084fc;
-    --purple-light: #d8b4fe;
-    --star: #ffb800;
-    --crypto: #0098ea;
-    --crypto-dark: #0078c4;
-    --card: #34c759;
-    --bg: #0a0a0a;
-    --text: #ffffff;
-    --text-dim: #9ca3af;
+--green: #00ff9c;
+--cyan: #00e5ff;
+--pink: #ff2d75;
+--orange: #ff9c00;
+--gold: #fbbf24;
+--gold-deep: #b45309;
+--gold-bright: #fde047;
+--purple: #c084fc;
+--purple-light: #d8b4fe;
+--star: #ffb800;
+--crypto: #0098ea;
+--crypto-dark: #0078c4;
+--card: #34c759;
+--bg: #0a0a0a;
+--text: #ffffff;
+--text-dim: #9ca3af;
 }
 
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
+background: var(--bg);
+color: var(--text);
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+min-height: 100vh;
+overflow-x: hidden;
 }
 
 .container { max-width: 760px; margin: 0 auto; padding: 50px 24px 80px; }
@@ -48,65 +48,65 @@ body {
 .brand-block { margin: 30px 0 16px; }
 
 .brand {
-    font-size: 76px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--green) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1;
-    margin-bottom: 12px;
+font-size: 76px;
+font-weight: 900;
+letter-spacing: 2px;
+background: linear-gradient(135deg, #fff 0%, var(--cyan) 50%, var(--green) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+line-height: 1;
+margin-bottom: 12px;
 }
 
 .brand-tagline { color: var(--text-dim); font-size: 16px; margin-bottom: 24px; }
 .brand-tagline::before { content: '// '; color: var(--green); }
 
 .reviews-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 24px;
-    background: rgba(0, 229, 255, 0.08);
-    border: 1.5px solid rgba(0, 229, 255, 0.4);
-    border-radius: 30px;
-    color: var(--cyan);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.2s;
-    margin: 8px 0;
-    white-space: nowrap;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+padding: 12px 24px;
+background: rgba(0, 229, 255, 0.08);
+border: 1.5px solid rgba(0, 229, 255, 0.4);
+border-radius: 30px;
+color: var(--cyan);
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+transition: all 0.2s;
+margin: 8px 0;
+white-space: nowrap;
 }
 
 .reviews-link:hover {
-    background: rgba(0, 229, 255, 0.15);
-    transform: translateY(-1px);
+background: rgba(0, 229, 255, 0.15);
+transform: translateY(-1px);
 }
 
 .reviews-link-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--cyan);
-    box-shadow: 0 0 8px var(--cyan);
-    animation: pulse 1.5s infinite;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: var(--cyan);
+box-shadow: 0 0 8px var(--cyan);
+animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
+0%, 100% { opacity: 1; transform: scale(1); }
+50% { opacity: 0.4; transform: scale(0.85); }
 }
 
 .system-info {
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 14px 18px;
-    margin-top: 20px;
-    background: rgba(255,255,255,0.03);
-    font-size: 13px;
-    line-height: 1.8;
-    color: var(--text-dim);
+border-radius: 14px;
+border: 1px solid rgba(255,255,255,0.08);
+padding: 14px 18px;
+margin-top: 20px;
+background: rgba(255,255,255,0.03);
+font-size: 13px;
+line-height: 1.8;
+color: var(--text-dim);
 }
 
 .system-info b { color: var(--green); }
@@ -114,20 +114,20 @@ body {
 .system-info .warn { color: var(--orange); }
 
 .preview-window {
-    margin-bottom: 40px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.02);
-    border-radius: 18px;
-    overflow: hidden;
+margin-bottom: 40px;
+border: 1px solid rgba(255,255,255,0.08);
+background: rgba(255,255,255,0.02);
+border-radius: 18px;
+overflow: hidden;
 }
 
 .window-bar {
-    background: rgba(255,255,255,0.04);
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+background: rgba(255,255,255,0.04);
+padding: 10px 16px;
+display: flex;
+align-items: center;
+gap: 8px;
+border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .dot { width: 10px; height: 10px; border-radius: 50%; }
@@ -142,131 +142,131 @@ body {
 .window-body img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .window-tag {
-    position: absolute;
-    bottom: 10px; right: 10px;
-    background: rgba(0,0,0,0.8);
-    border: 1px solid var(--green);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 11px;
-    color: var(--green);
+position: absolute;
+bottom: 10px; right: 10px;
+background: rgba(0,0,0,0.8);
+border: 1px solid var(--green);
+padding: 4px 10px;
+border-radius: 6px;
+font-size: 11px;
+color: var(--green);
 }
 
 .preview-footer {
-    padding: 12px 18px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 13px;
-    color: var(--text-dim);
+padding: 12px 18px;
+border-top: 1px solid rgba(255,255,255,0.06);
+font-size: 13px;
+color: var(--text-dim);
 }
 
 .preview-footer .ok { color: var(--green); }
 
 .section-title {
-    margin: 40px 0 20px;
-    font-size: 15px;
-    color: var(--text-dim);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+margin: 40px 0 20px;
+font-size: 15px;
+color: var(--text-dim);
+letter-spacing: 2px;
+text-transform: uppercase;
 }
 .section-title b { color: var(--green); }
 
 .pkg {
-    position: relative;
-    border-radius: 20px;
-    padding: 0;
-    margin-bottom: 22px;
-    overflow: hidden;
-    transition: transform 0.3s;
+position: relative;
+border-radius: 20px;
+padding: 0;
+margin-bottom: 22px;
+overflow: hidden;
+transition: transform 0.3s;
 }
 
 .pkg:hover { transform: translateY(-3px); }
 
 .pkg.gold {
-    background: linear-gradient(135deg, #1a1208 0%, #2a1f0a 100%);
-    border: 2px solid var(--gold);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(251,191,36,0.15);
+background: linear-gradient(135deg, #1a1208 0%, #2a1f0a 100%);
+border: 2px solid var(--gold);
+box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(251,191,36,0.15);
 }
 
 .pkg.cyan {
-    background: linear-gradient(135deg, #051824 0%, #0a2a3a 100%);
-    border: 1.5px solid var(--cyan);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(0,229,255,0.1);
+background: linear-gradient(135deg, #051824 0%, #0a2a3a 100%);
+border: 1.5px solid var(--cyan);
+box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(0,229,255,0.1);
 }
 
 .pkg.pink {
-    background: linear-gradient(135deg, #1a050d 0%, #2d0a18 100%);
-    border: 1.5px solid var(--pink);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(255,45,117,0.1);
+background: linear-gradient(135deg, #1a050d 0%, #2d0a18 100%);
+border: 1.5px solid var(--pink);
+box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(255,45,117,0.1);
 }
 
 .pkg.green {
-    background: linear-gradient(135deg, #051a0e 0%, #0a2818 100%);
-    border: 1.5px solid #4ade80;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(74,222,128,0.1);
+background: linear-gradient(135deg, #051a0e 0%, #0a2818 100%);
+border: 1.5px solid #4ade80;
+box-shadow: 0 6px 24px rgba(0,0,0,0.4), 0 0 20px rgba(74,222,128,0.1);
 }
 
 .pkg.purple {
-    position: relative;
-    background: linear-gradient(135deg, #1a0a2e 0%, #2d1444 50%, #1a0a2e 100%);
-    border: 2px solid var(--purple);
-    box-shadow: 
-        0 8px 32px rgba(192, 132, 252, 0.3),
-        0 0 40px rgba(192, 132, 252, 0.4),
-        inset 0 1px 0 rgba(192, 132, 252, 0.2);
-    animation: freeGlow 3s ease-in-out infinite;
+position: relative;
+background: linear-gradient(135deg, #1a0a2e 0%, #2d1444 50%, #1a0a2e 100%);
+border: 2px solid var(--purple);
+box-shadow:
+0 8px 32px rgba(192, 132, 252, 0.3),
+0 0 40px rgba(192, 132, 252, 0.4),
+inset 0 1px 0 rgba(192, 132, 252, 0.2);
+animation: freeGlow 3s ease-in-out infinite;
 }
 
 @keyframes freeGlow {
-    0%, 100% {
-        box-shadow: 
-            0 8px 32px rgba(192, 132, 252, 0.3),
-            0 0 40px rgba(192, 132, 252, 0.4),
-            inset 0 1px 0 rgba(192, 132, 252, 0.2);
-    }
-    50% {
-        box-shadow: 
-            0 8px 40px rgba(192, 132, 252, 0.5),
-            0 0 60px rgba(192, 132, 252, 0.6),
-            inset 0 1px 0 rgba(192, 132, 252, 0.3);
-    }
+0%, 100% {
+box-shadow:
+0 8px 32px rgba(192, 132, 252, 0.3),
+0 0 40px rgba(192, 132, 252, 0.4),
+inset 0 1px 0 rgba(192, 132, 252, 0.2);
+}
+50% {
+box-shadow:
+0 8px 40px rgba(192, 132, 252, 0.5),
+0 0 60px rgba(192, 132, 252, 0.6),
+inset 0 1px 0 rgba(192, 132, 252, 0.3);
+}
 }
 
 .free-badge {
-    position: absolute;
-    top: -1px;
-    right: 20px;
-    background: linear-gradient(135deg, var(--purple), #a855f7);
-    color: #fff;
-    padding: 5px 14px;
-    border-radius: 0 0 12px 12px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    z-index: 2;
-    box-shadow: 0 4px 12px rgba(192, 132, 252, 0.4);
+position: absolute;
+top: -1px;
+right: 20px;
+background: linear-gradient(135deg, var(--purple), #a855f7);
+color: #fff;
+padding: 5px 14px;
+border-radius: 0 0 12px 12px;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 2px;
+z-index: 2;
+box-shadow: 0 4px 12px rgba(192, 132, 252, 0.4);
 }
 
 .free-badge::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #4ade80;
-    margin-right: 6px;
-    vertical-align: middle;
-    box-shadow: 0 0 8px #4ade80;
-    animation: pulse 1.5s infinite;
+content: '';
+display: inline-block;
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: #4ade80;
+margin-right: 6px;
+vertical-align: middle;
+box-shadow: 0 0 8px #4ade80;
+animation: pulse 1.5s infinite;
 }
 
 .pkg-head {
-    padding: 16px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+padding: 16px 24px;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 8px;
 }
 
 .pkg.purple .pkg-head { padding-top: 26px; }
@@ -279,13 +279,13 @@ body {
 .pkg.purple .pkg-id b { color: var(--purple-light); }
 
 .pkg-status {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    background: rgba(0,255,156,0.1);
-    border-radius: 6px;
+font-size: 11px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+padding: 4px 10px;
+background: rgba(0,255,156,0.1);
+border-radius: 6px;
 }
 
 .pkg.gold .pkg-status { color: var(--gold); background: rgba(251,191,36,0.1); }
@@ -297,10 +297,10 @@ body {
 .pkg-body { padding: 22px 24px; }
 
 .pkg-title {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 6px;
+font-size: 24px;
+font-weight: 800;
+color: var(--text);
+margin-bottom: 6px;
 }
 
 .pkg.gold .pkg-title { color: #fde047; }
@@ -310,9 +310,9 @@ body {
 .pkg.purple .pkg-title { color: var(--purple-light); }
 
 .pkg-volume {
-    color: var(--text-dim);
-    font-size: 14px;
-    margin-bottom: 16px;
+color: var(--text-dim);
+font-size: 14px;
+margin-bottom: 16px;
 }
 
 .pkg-volume b { color: var(--text); }
@@ -320,60 +320,60 @@ body {
 .pkg.purple .pkg-volume b { color: var(--purple-light); }
 
 .pkg-exclusive {
-    background: rgba(251,191,36,0.08);
-    border: 1px solid rgba(251,191,36,0.25);
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
-    text-align: center;
+background: rgba(251,191,36,0.08);
+border: 1px solid rgba(251,191,36,0.25);
+border-radius: 10px;
+padding: 12px 14px;
+margin-bottom: 16px;
+text-align: center;
 }
 
 .pkg-exclusive-title {
-    font-size: 11px;
-    letter-spacing: 3px;
-    font-weight: 800;
-    color: #fde047;
+font-size: 11px;
+letter-spacing: 3px;
+font-weight: 800;
+color: #fde047;
 }
 
 .pkg-exclusive-text {
-    font-size: 14px;
-    color: #fef3c7;
-    margin-top: 4px;
+font-size: 14px;
+color: #fef3c7;
+margin-top: 4px;
 }
 
 .pkg-exclusive-text b { color: #fde047; font-weight: 800; }
 
 .pkg-bonus {
-    background: rgba(251,191,36,0.06);
-    border: 1px dashed rgba(251,191,36,0.3);
-    border-radius: 10px;
-    padding: 10px 14px;
-    margin-bottom: 18px;
-    text-align: center;
-    font-size: 13px;
-    color: #fef3c7;
+background: rgba(251,191,36,0.06);
+border: 1px dashed rgba(251,191,36,0.3);
+border-radius: 10px;
+padding: 10px 14px;
+margin-bottom: 18px;
+text-align: center;
+font-size: 13px;
+color: #fef3c7;
 }
 
 .pkg-bonus b { color: #fde047; font-weight: 700; }
 
 .features {
-    list-style: none;
-    margin-bottom: 22px;
-    font-size: 14px;
+list-style: none;
+margin-bottom: 22px;
+font-size: 14px;
 }
 
 .features li {
-    padding: 5px 0 5px 24px;
-    position: relative;
-    color: var(--text-dim);
-    line-height: 1.5;
+padding: 5px 0 5px 24px;
+position: relative;
+color: var(--text-dim);
+line-height: 1.5;
 }
 
 .features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    font-weight: 700;
+content: '✓';
+position: absolute;
+left: 0;
+font-weight: 700;
 }
 
 .pkg.gold .features li::before { color: #fde047; }
@@ -385,38 +385,38 @@ body {
 .features li b { color: var(--text); font-weight: 700; }
 
 .price-zone {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    padding: 14px 18px;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
+display: flex;
+align-items: baseline;
+gap: 12px;
+margin-bottom: 8px;
+flex-wrap: wrap;
+padding: 14px 18px;
+background: rgba(0,0,0,0.4);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 12px;
 }
 
 .price-now {
-    font-size: 34px;
-    font-weight: 800;
-    color: var(--text);
-    line-height: 1;
+font-size: 34px;
+font-weight: 800;
+color: var(--text);
+line-height: 1;
 }
 
 .price-was {
-    font-size: 16px;
-    color: var(--text-dim);
-    text-decoration: line-through;
+font-size: 16px;
+color: var(--text-dim);
+text-decoration: line-through;
 }
 
 .price-tag {
-    margin-left: auto;
-    background: var(--green);
-    color: #000;
-    padding: 5px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 800;
+margin-left: auto;
+background: var(--green);
+color: #000;
+padding: 5px 12px;
+border-radius: 6px;
+font-size: 13px;
+font-weight: 800;
 }
 
 .pkg.gold .price-tag { background: var(--gold); color: #1c1407; }
@@ -426,42 +426,42 @@ body {
 .pkg.purple .price-tag { background: var(--purple); }
 
 .price-stars {
-    margin: 0 0 18px;
-    padding: 6px 12px;
-    background: rgba(255, 184, 0, 0.08);
-    border: 1px dashed rgba(255, 184, 0, 0.3);
-    border-radius: 10px;
-    color: var(--star);
-    font-size: 13px;
-    text-align: center;
-    font-weight: 600;
+margin: 0 0 18px;
+padding: 6px 12px;
+background: rgba(255, 184, 0, 0.08);
+border: 1px dashed rgba(255, 184, 0, 0.3);
+border-radius: 10px;
+color: var(--star);
+font-size: 13px;
+text-align: center;
+font-weight: 600;
 }
 
 .price-stars-icon {
-    font-size: 14px;
-    margin-right: 4px;
+font-size: 14px;
+margin-right: 4px;
 }
 
 .btn-buy {
-    width: 100%;
-    padding: 16px;
-    background: var(--green);
-    border: none;
-    border-radius: 12px;
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: all 0.2s;
-    white-space: nowrap;
+width: 100%;
+padding: 16px;
+background: var(--green);
+border: none;
+border-radius: 12px;
+color: #000;
+font-family: 'Inter', sans-serif;
+font-size: 16px;
+font-weight: 800;
+cursor: pointer;
+letter-spacing: 1px;
+transition: all 0.2s;
+white-space: nowrap;
 }
 
 .btn-buy:hover {
-    background: #00cc7d;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(0,255,156,0.3);
+background: #00cc7d;
+transform: translateY(-1px);
+box-shadow: 0 8px 20px rgba(0,255,156,0.3);
 }
 
 .btn-buy:active { transform: translateY(0); }
@@ -482,107 +482,107 @@ body {
 .pkg.purple .btn-buy:hover { background: #a855f7; box-shadow: 0 6px 20px rgba(192,132,252,0.6); transform: translateY(-2px); }
 
 .pkg-foot {
-    margin-top: 12px;
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 12px;
+margin-top: 12px;
+text-align: center;
+color: var(--text-dim);
+font-size: 12px;
 }
 .pkg-foot b { color: var(--purple-light); }
 
 .tg-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin: 4px 0 14px;
-    padding: 6px 12px;
-    background: rgba(74, 222, 128, 0.06);
-    border: 1px dashed rgba(74, 222, 128, 0.3);
-    border-radius: 16px;
-    color: #4ade80;
-    font-size: 12px;
-    font-weight: 600;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+margin: 4px 0 14px;
+padding: 6px 12px;
+background: rgba(74, 222, 128, 0.06);
+border: 1px dashed rgba(74, 222, 128, 0.3);
+border-radius: 16px;
+color: #4ade80;
+font-size: 12px;
+font-weight: 600;
 }
 
 .tg-hint::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 6px #4ade80;
-    animation: pulse 1.5s infinite;
+content: '';
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: #4ade80;
+box-shadow: 0 0 6px #4ade80;
+animation: pulse 1.5s infinite;
 }
 
 .divider {
-    text-align: center;
-    margin: 35px 0 20px;
-    color: var(--text-dim);
-    font-size: 13px;
+text-align: center;
+margin: 35px 0 20px;
+color: var(--text-dim);
+font-size: 13px;
 }
 .divider span { color: var(--purple); }
 
 .end-note {
-    text-align: center;
-    margin-top: 40px;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(0,0,0,0.4);
-    color: var(--text-dim);
-    font-size: 13px;
+text-align: center;
+margin-top: 40px;
+padding: 14px;
+border-radius: 12px;
+border: 1px solid rgba(255,255,255,0.08);
+background: rgba(0,0,0,0.4);
+color: var(--text-dim);
+font-size: 13px;
 }
 .end-note b { color: var(--green); }
 
 .modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);
-    padding: 16px;
+display: none;
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background: rgba(0,0,0,0.85);
+z-index: 100;
+align-items: center;
+justify-content: center;
+backdrop-filter: blur(4px);
+padding: 16px;
 }
 .modal-overlay.on { display: flex; }
 
 .modal {
-    background: #161616;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
-    max-width: 400px;
-    width: 100%;
-    overflow: hidden;
-    animation: modalIn 0.25s ease;
+background: #161616;
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 20px;
+max-width: 400px;
+width: 100%;
+overflow: hidden;
+animation: modalIn 0.25s ease;
 }
 
 @keyframes modalIn {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+from { transform: scale(0.9); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
 }
 
 .modal-head {
-    padding: 18px 22px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+padding: 18px 22px;
+border-bottom: 1px solid rgba(255,255,255,0.08);
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .modal-title { font-size: 14px; color: var(--text-dim); font-weight: 600; }
 .modal-title b { color: var(--green); font-weight: 800; }
 
 .modal-close {
-    background: none;
-    border: none;
-    color: var(--text-dim);
-    font-size: 24px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition: all 0.2s;
+background: none;
+border: none;
+color: var(--text-dim);
+font-size: 24px;
+cursor: pointer;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+transition: all 0.2s;
 }
 
 .modal-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
@@ -592,205 +592,205 @@ body {
 .modal-amount { text-align: center; margin-bottom: 24px; }
 
 .modal-amount-name {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+font-size: 13px;
+color: var(--text-dim);
+margin-bottom: 6px;
+text-transform: uppercase;
+letter-spacing: 1.5px;
 }
 
 .modal-amount-sum {
-    font-size: 40px;
-    font-weight: 800;
-    color: var(--text);
-    line-height: 1;
+font-size: 40px;
+font-weight: 800;
+color: var(--text);
+line-height: 1;
 }
 
 .modal-amount-stars {
-    margin-top: 8px;
-    color: var(--star);
-    font-size: 14px;
-    font-weight: 700;
+margin-top: 8px;
+color: var(--star);
+font-size: 14px;
+font-weight: 700;
 }
 
 .modal-pay-title {
-    font-size: 13px;
-    color: var(--text-dim);
-    text-align: center;
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+font-size: 13px;
+color: var(--text-dim);
+text-align: center;
+margin-bottom: 14px;
+text-transform: uppercase;
+letter-spacing: 1px;
 }
 
 .btn-stars {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, var(--star), #ff9500);
-    border: none;
-    border-radius: 12px;
-    color: #1a1a1a;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(255, 184, 0, 0.3);
+width: 100%;
+padding: 16px;
+background: linear-gradient(135deg, var(--star), #ff9500);
+border: none;
+border-radius: 12px;
+color: #1a1a1a;
+font-family: 'Inter', sans-serif;
+font-size: 15px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+margin-bottom: 10px;
+text-decoration: none;
+box-shadow: 0 4px 14px rgba(255, 184, 0, 0.3);
 }
 
 .btn-stars-icon {
-    width: 22px;
-    height: 22px;
-    background: rgba(0,0,0,0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 13px;
+width: 22px;
+height: 22px;
+background: rgba(0,0,0,0.15);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 800;
+font-size: 13px;
 }
 
 .btn-stars:hover {
-    background: linear-gradient(135deg, #ffc800, #ffa000);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(255, 184, 0, 0.5);
+background: linear-gradient(135deg, #ffc800, #ffa000);
+transform: translateY(-1px);
+box-shadow: 0 6px 20px rgba(255, 184, 0, 0.5);
 }
 
 .btn-crypto {
-    width: 100%;
-    padding: 16px;
-    background: var(--crypto);
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0, 152, 234, 0.3);
+width: 100%;
+padding: 16px;
+background: var(--crypto);
+border: none;
+border-radius: 12px;
+color: #fff;
+font-family: 'Inter', sans-serif;
+font-size: 15px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+margin-bottom: 10px;
+text-decoration: none;
+box-shadow: 0 4px 14px rgba(0, 152, 234, 0.3);
 }
 
 .btn-crypto-icon {
-    width: 22px;
-    height: 22px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 13px;
+width: 22px;
+height: 22px;
+background: rgba(255,255,255,0.2);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 800;
+font-size: 13px;
 }
 
 .btn-crypto:hover {
-    background: var(--crypto-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 152, 234, 0.5);
+background: var(--crypto-dark);
+transform: translateY(-1px);
+box-shadow: 0 6px 20px rgba(0, 152, 234, 0.5);
 }
 
 .btn-card {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, var(--card), #2ea44f);
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(52, 199, 89, 0.3);
+width: 100%;
+padding: 16px;
+background: linear-gradient(135deg, var(--card), #2ea44f);
+border: none;
+border-radius: 12px;
+color: #fff;
+font-family: 'Inter', sans-serif;
+font-size: 15px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+margin-bottom: 10px;
+text-decoration: none;
+box-shadow: 0 4px 14px rgba(52, 199, 89, 0.3);
 }
 
 .btn-card-icon {
-    width: 22px;
-    height: 22px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 13px;
+width: 22px;
+height: 22px;
+background: rgba(255,255,255,0.2);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 800;
+font-size: 13px;
 }
 
 .btn-card:hover {
-    background: linear-gradient(135deg, #2ea44f, #22863a);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(52, 199, 89, 0.5);
+background: linear-gradient(135deg, #2ea44f, #22863a);
+transform: translateY(-1px);
+box-shadow: 0 6px 20px rgba(52, 199, 89, 0.5);
 }
 
 .btn-card-hint {
-    font-size: 11px;
-    color: var(--text-dim);
-    text-align: center;
-    margin-top: -4px;
-    margin-bottom: 14px;
-    letter-spacing: 0.3px;
+font-size: 11px;
+color: var(--text-dim);
+text-align: center;
+margin-top: -4px;
+margin-bottom: 14px;
+letter-spacing: 0.3px;
 }
 
 .btn-support {
-    width: 100%;
-    padding: 14px;
-    background: transparent;
-    border: none;
-    color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: block;
+width: 100%;
+padding: 14px;
+background: transparent;
+border: none;
+color: var(--text-dim);
+font-family: 'Inter', sans-serif;
+font-size: 14px;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+display: block;
 }
 
 .btn-support:hover { color: var(--text); }
 
 @media (max-width: 600px) {
-    .brand { font-size: 50px; }
-    .container { padding: 30px 14px 50px; }
-    .pkg-body { padding: 18px; }
-    .price-now { font-size: 30px; }
-    .pkg-title { font-size: 22px; }
-    .pkg-head { padding: 14px 18px; }
-    .reviews-link { padding: 10px 20px; font-size: 13px; }
-    
-    .btn-buy {
-        font-size: 14px;
-        letter-spacing: 0.5px;
-        padding: 14px 12px;
-        white-space: nowrap;
-    }
-    
-    .btn-stars, .btn-crypto, .btn-card {
-        font-size: 13px;
-        padding: 14px 8px;
-        white-space: nowrap;
-    }
+.brand { font-size: 50px; }
+.container { padding: 30px 14px 50px; }
+.pkg-body { padding: 18px; }
+.price-now { font-size: 30px; }
+.pkg-title { font-size: 22px; }
+.pkg-head { padding: 14px 18px; }
+.reviews-link { padding: 10px 20px; font-size: 13px; }
+
+.btn-buy {
+font-size: 14px;
+letter-spacing: 0.5px;
+padding: 14px 12px;
+white-space: nowrap;
+}
+
+.btn-stars, .btn-crypto, .btn-card {
+font-size: 13px;
+padding: 14px 8px;
+white-space: nowrap;
+}
 }
 
 @media (max-width: 420px) {
-    .brand { font-size: 40px; }
-    .container { padding: 24px 12px 40px; }
-    .pkg { border-radius: 16px; }
+.brand { font-size: 40px; }
+.container { padding: 24px 12px 40px; }
+.pkg { border-radius: 16px; }
 }
 </style>
 </head>
@@ -798,229 +798,229 @@ body {
 
 <div class="container">
 
-    <header class="terminal-header">
-        <div class="line"><span class="prompt">$</span>connect bexga.store</div>
-        <div class="line"><span class="prompt">$</span>auth --user=guest</div>
-        <div class="line"><span class="prompt">$</span>load catalog.bin</div>
-        <div class="line"><span class="prompt">$</span>access granted <span class="ok">[OK]</span></div>
+<header class="terminal-header">
+<div class="line"><span class="prompt">$</span>connect bexga.store</div>
+<div class="line"><span class="prompt">$</span>auth --user=guest</div>
+<div class="line"><span class="prompt">$</span>load catalog.bin</div>
+<div class="line"><span class="prompt">$</span>access granted <span class="ok">[OK]</span></div>
 
-        <div class="brand-block">
-            <h1 class="brand">BEXGA</h1>
-            <div class="brand-tagline">Секретный магазин</div>
-            
-            <a href="https://t.me/idjdhfhsk" target="_blank" class="reviews-link">
-                <span class="reviews-link-dot"></span>
-                ★ Отзывы
-            </a>
-        </div>
+<div class="brand-block">
+<h1 class="brand">BEXGA</h1>
+<div class="brand-tagline">Секретный магазин</div>
 
-        <div class="system-info">
-            <b>Статус:</b> <span class="ok">Онлайн</span> · каталог v2.4.1<br>
-            <b>Оплата:</b> <span class="ok">Crypto Bot</span> · Telegram Stars<br>
-            <b>Также:</b> <span class="warn">Карты через модератора</span>
-        </div>
-    </header>
+<a href="https://t.me/idjdhfhsk" target="_blank" class="reviews-link">
+<span class="reviews-link-dot"></span>
+★ Отзывы
+</a>
+</div>
 
-    <section class="preview-window">
-        <div class="window-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green-dot"></span>
-            <span class="window-title">preview.jpg</span>
-        </div>
-        <div class="window-body">
-            <img src="https://i.postimg.cc/2yZsMS5D/u-D06v-Acgb2UDTm6ayo7b-Mf7sic9h-s-Ya-UDE66n-TD2Ofe4V-0c4qq-Y4XRUw-Jizc-I38q-Li9Rqjp-XS81Im-Dp-Wl63.jpg" alt="Превью">
-            <div class="window-tag">18+</div>
-        </div>
-        <div class="preview-footer">
-            <span class="ok">+</span> Каталог обновляется каждую неделю
-        </div>
-    </section>
+<div class="system-info">
+<b>Статус:</b> <span class="ok">Онлайн</span> · каталог v2.4.1<br>
+<b>Оплата:</b> <span class="ok">Crypto Bot</span> · Telegram Stars<br>
+<b>Также:</b> <span class="warn">Карты через модератора</span>
+</div>
+</header>
 
-    <!-- БЕСПЛАТНЫЙ ПАК — НОВЫЙ КАНАЛ @vladiksuka/idjdhfhsk -->
-    <div class="pkg purple">
-        <div class="free-badge">FREE</div>
-        <div class="pkg-head">
-            <div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
-            <div class="pkg-status">★ Бесплатно</div>
-        </div>
-        <div class="pkg-body">
-            <h3 class="pkg-title">Бесплатный пак</h3>
-            <div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
-            
-            <div class="tg-hint">в тгк инструкция</div>
-            
-            <!-- ↓↓↓ НОВАЯ ССЫЛКА НА БЕСПЛАТНЫЙ КАНАЛ ↓↓↓ -->
-            <a href="https://t.me/idjdhfhsk" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
-            <div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
-        </div>
-    </div>
+<section class="preview-window">
+<div class="window-bar">
+<span class="dot red"></span>
+<span class="dot yellow"></span>
+<span class="dot green-dot"></span>
+<span class="window-title">preview.jpg</span>
+</div>
+<div class="window-body">
+<img src="https://i.postimg.cc/2yZsMS5D/u-D06v-Acgb2UDTm6ayo7b-Mf7sic9h-s-Ya-UDE66n-TD2Ofe4V-0c4qq-Y4XRUw-Jizc-I38q-Li9Rqjp-XS81Im-Dp-Wl63.jpg" alt="Превью">
+<div class="window-tag">18+</div>
+</div>
+<div class="preview-footer">
+<span class="ok">+</span> Каталог обновляется каждую неделю
+</div>
+</section>
 
-    <div class="divider">— или купи платный —</div>
+<!-- БЕСПЛАТНЫЙ ПАК — НОВЫЙ КАНАЛ @dimaPozic/idjdhfhsk -->
+<div class="pkg purple">
+<div class="free-badge">FREE</div>
+<div class="pkg-head">
+<div class="pkg-id">Пакет <b>FREE Бесплатно</b></div>
+<div class="pkg-status">★ Бесплатно</div>
+</div>
+<div class="pkg-body">
+<h3 class="pkg-title">Бесплатный пак</h3>
+<div class="pkg-volume">📦 <b>90 ГБ</b> контента</div>
 
-    <div class="section-title">Платные <b>пакеты</b></div>
+<div class="tg-hint">в тгк инструкция</div>
 
-    <div class="pkg gold">
-        <div class="pkg-head">
-            <div class="pkg-id">Пакет <b>01 Премиум</b></div>
-            <div class="pkg-status">★ Лучший выбор</div>
-        </div>
-        <div class="pkg-body">
-            <h3 class="pkg-title">Премиум-пакет</h3>
-            <div class="pkg-volume">📦 <b>3.5 ТБ</b> · полный доступ</div>
-            
-            <div class="pkg-exclusive">
-                <div class="pkg-exclusive-title">★ ЭКСКЛЮЗИВ ★</div>
-                <div class="pkg-exclusive-text">видео которых <b>НЕТ НИГДЕ</b></div>
-            </div>
-            
-            <ul class="features">
-                <li>более <b>47 100</b> тысяч фото и видео</li>
-                <li>постоянный доступ к архиву и закрытому каналу</li>
-                <li>пополняем <b>каждый день</b> новый контент</li>
-                <li>возможность сохранять контент себе</li>
-            </ul>
-            
-            <div class="pkg-bonus">
-                🎁 Каждый пак ниже <b>бесплатный</b> при покупке премиума
-            </div>
-            
-            <div class="price-zone">
-                <span class="price-now">1100 ₽</span>
-                <span class="price-was">3400 ₽</span>
-                <span class="price-tag">-68%</span>
-            </div>
-            <div class="price-stars">
-                <span class="price-stars-icon">⭐</span>или <b>750 звёзд</b> в Telegram Stars
-            </div>
-            
-            <button class="btn-buy" onclick="openPay('premium', 'Премиум-пакет', '1100')">КУПИТЬ</button>
-        </div>
-    </div>
+<!-- ↓↓↓ НОВАЯ ССЫЛКА НА БЕСПЛАТНЫЙ КАНАЛ ↓↓↓ -->
+<a href="https://t.me/idjdhfhsk" target="_blank" class="btn-buy">ПОЛУЧИТЬ</a>
+<div class="pkg-foot">⏳ Выдача пака в течение <b>15-ти минут</b></div>
+</div>
+</div>
 
-    <div class="pkg cyan">
-        <div class="pkg-head">
-            <div class="pkg-id">Пакет <b>02 Полный</b></div>
-            <div class="pkg-status">★ Популярный</div>
-        </div>
-        <div class="pkg-body">
-            <h3 class="pkg-title">Полный пакет</h3>
-            <div class="pkg-volume">📦 <b>930 ГБ</b> · полный архив</div>
-            <ul class="features">
-                <li>более <b>21 450</b> фото и видео</li>
-                <li>постоянный доступ к архиву и закрытому каналу</li>
-                <li>пополняем каждый день новый контент</li>
-                <li>возможность сохранять контент себе</li>
-            </ul>
-            <div class="price-zone">
-                <span class="price-now">720 ₽</span>
-                <span class="price-was">950 ₽</span>
-                <span class="price-tag">-25%</span>
-            </div>
-            <div class="price-stars">
-                <span class="price-stars-icon">⭐</span>или <b>550 звёзд</b> в Telegram Stars
-            </div>
-            
-            <button class="btn-buy" onclick="openPay('full', 'Полный пакет', '720')">КУПИТЬ</button>
-        </div>
-    </div>
+<div class="divider">— или купи платный —</div>
 
-    <div class="pkg pink">
-        <div class="pkg-head">
-            <div class="pkg-id">Пакет <b>03 Средний</b></div>
-            <div class="pkg-status">★ Оптимальный</div>
-        </div>
-        <div class="pkg-body">
-            <h3 class="pkg-title">Средний пакет</h3>
-            <div class="pkg-volume">📦 <b>560 ГБ</b> · оптимальный выбор</div>
-            <ul class="features">
-                <li>более <b>16 300</b> фото и видео</li>
-                <li>постоянный доступ к архиву и закрытому каналу</li>
-                <li>пополняем каждый день новый контент</li>
-                <li>возможность сохранять контент себе</li>
-            </ul>
-            <div class="price-zone">
-                <span class="price-now">550 ₽</span>
-                <span class="price-was">750 ₽</span>
-                <span class="price-tag">-27%</span>
-            </div>
-            <div class="price-stars">
-                <span class="price-stars-icon">⭐</span>или <b>380 звёзд</b> в Telegram Stars
-            </div>
-            
-            <button class="btn-buy" onclick="openPay('medium', 'Средний пакет', '550')">КУПИТЬ</button>
-        </div>
-    </div>
+<div class="section-title">Платные <b>пакеты</b></div>
 
-    <div class="pkg green">
-        <div class="pkg-head">
-            <div class="pkg-id">Пакет <b>04 Маленький</b></div>
-            <div class="pkg-status">★ Старт</div>
-        </div>
-        <div class="pkg-body">
-            <h3 class="pkg-title">Маленький пакет</h3>
-            <div class="pkg-volume">📦 <b>190 ГБ</b> · стартовый набор</div>
-            <ul class="features">
-                <li>более <b>8 500</b> фото и видео</li>
-                <li>постоянный доступ к архиву и закрытому каналу</li>
-                <li>пополняем каждый день новый контент</li>
-                <li>возможность сохранять контент себе</li>
-            </ul>
-            <div class="price-zone">
-                <span class="price-now">300 ₽</span>
-                <span class="price-was">450 ₽</span>
-                <span class="price-tag">-33%</span>
-            </div>
-            <div class="price-stars">
-                <span class="price-stars-icon">⭐</span>или <b>200 звёзд</b> в Telegram Stars
-            </div>
-            
-            <button class="btn-buy" onclick="openPay('small', 'Маленький пакет', '300')">КУПИТЬ</button>
-        </div>
-    </div>
+<div class="pkg gold">
+<div class="pkg-head">
+<div class="pkg-id">Пакет <b>01 Премиум</b></div>
+<div class="pkg-status">★ Лучший выбор</div>
+</div>
+<div class="pkg-body">
+<h3 class="pkg-title">Премиум-пакет</h3>
+<div class="pkg-volume">📦 <b>3.5 ТБ</b> · полный доступ</div>
 
-    <div class="end-note">$ <b>Доступ открывается автоматически</b> после оплаты</div>
+<div class="pkg-exclusive">
+<div class="pkg-exclusive-title">★ ЭКСКЛЮЗИВ ★</div>
+<div class="pkg-exclusive-text">видео которых <b>НЕТ НИГДЕ</b></div>
+</div>
+
+<ul class="features">
+<li>более <b>47 100</b> тысяч фото и видео</li>
+<li>постоянный доступ к архиву и закрытому каналу</li>
+<li>пополняем <b>каждый день</b> новый контент</li>
+<li>возможность сохранять контент себе</li>
+</ul>
+
+<div class="pkg-bonus">
+🎁 Каждый пак ниже <b>бесплатный</b> при покупке премиума
+</div>
+
+<div class="price-zone">
+<span class="price-now">1100 ₽</span>
+<span class="price-was">3400 ₽</span>
+<span class="price-tag">-68%</span>
+</div>
+<div class="price-stars">
+<span class="price-stars-icon">⭐</span>или <b>750 звёзд</b> в Telegram Stars
+</div>
+
+<button class="btn-buy" onclick="openPay('premium', 'Премиум-пакет', '1100')">КУПИТЬ</button>
+</div>
+</div>
+
+<div class="pkg cyan">
+<div class="pkg-head">
+<div class="pkg-id">Пакет <b>02 Полный</b></div>
+<div class="pkg-status">★ Популярный</div>
+</div>
+<div class="pkg-body">
+<h3 class="pkg-title">Полный пакет</h3>
+<div class="pkg-volume">📦 <b>930 ГБ</b> · полный архив</div>
+<ul class="features">
+<li>более <b>21 450</b> фото и видео</li>
+<li>постоянный доступ к архиву и закрытому каналу</li>
+<li>пополняем каждый день новый контент</li>
+<li>возможность сохранять контент себе</li>
+</ul>
+<div class="price-zone">
+<span class="price-now">720 ₽</span>
+<span class="price-was">950 ₽</span>
+<span class="price-tag">-25%</span>
+</div>
+<div class="price-stars">
+<span class="price-stars-icon">⭐</span>или <b>550 звёзд</b> в Telegram Stars
+</div>
+
+<button class="btn-buy" onclick="openPay('full', 'Полный пакет', '720')">КУПИТЬ</button>
+</div>
+</div>
+
+<div class="pkg pink">
+<div class="pkg-head">
+<div class="pkg-id">Пакет <b>03 Средний</b></div>
+<div class="pkg-status">★ Оптимальный</div>
+</div>
+<div class="pkg-body">
+<h3 class="pkg-title">Средний пакет</h3>
+<div class="pkg-volume">📦 <b>560 ГБ</b> · оптимальный выбор</div>
+<ul class="features">
+<li>более <b>16 300</b> фото и видео</li>
+<li>постоянный доступ к архиву и закрытому каналу</li>
+<li>пополняем каждый день новый контент</li>
+<li>возможность сохранять контент себе</li>
+</ul>
+<div class="price-zone">
+<span class="price-now">550 ₽</span>
+<span class="price-was">750 ₽</span>
+<span class="price-tag">-27%</span>
+</div>
+<div class="price-stars">
+<span class="price-stars-icon">⭐</span>или <b>380 звёзд</b> в Telegram Stars
+</div>
+
+<button class="btn-buy" onclick="openPay('medium', 'Средний пакет', '550')">КУПИТЬ</button>
+</div>
+</div>
+
+<div class="pkg green">
+<div class="pkg-head">
+<div class="pkg-id">Пакет <b>04 Маленький</b></div>
+<div class="pkg-status">★ Старт</div>
+</div>
+<div class="pkg-body">
+<h3 class="pkg-title">Маленький пакет</h3>
+<div class="pkg-volume">📦 <b>190 ГБ</b> · стартовый набор</div>
+<ul class="features">
+<li>более <b>8 500</b> фото и видео</li>
+<li>постоянный доступ к архиву и закрытому каналу</li>
+<li>пополняем каждый день новый контент</li>
+<li>возможность сохранять контент себе</li>
+</ul>
+<div class="price-zone">
+<span class="price-now">300 ₽</span>
+<span class="price-was">450 ₽</span>
+<span class="price-tag">-33%</span>
+</div>
+<div class="price-stars">
+<span class="price-stars-icon">⭐</span>или <b>200 звёзд</b> в Telegram Stars
+</div>
+
+<button class="btn-buy" onclick="openPay('small', 'Маленький пакет', '300')">КУПИТЬ</button>
+</div>
+</div>
+
+<div class="end-note">$ <b>Доступ открывается автоматически</b> после оплаты</div>
 
 </div>
 
 <div class="modal-overlay" id="payModal">
-    <div class="modal">
-        <div class="modal-head">
-            <div class="modal-title">Оплата · <b id="modal-name">пакет</b></div>
-            <button class="modal-close" onclick="closePay()">×</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-amount">
-                <div class="modal-amount-name">К оплате</div>
-                <div class="modal-amount-sum" id="modal-sum">0 ₽</div>
-                <div class="modal-amount-stars" id="modal-stars">⭐</div>
-            </div>
+<div class="modal">
+<div class="modal-head">
+<div class="modal-title">Оплата · <b id="modal-name">пакет</b></div>
+<button class="modal-close" onclick="closePay()">×</button>
+</div>
+<div class="modal-body">
+<div class="modal-amount">
+<div class="modal-amount-name">К оплате</div>
+<div class="modal-amount-sum" id="modal-sum">0 ₽</div>
+<div class="modal-amount-stars" id="modal-stars">⭐</div>
+</div>
 
-            <div class="modal-pay-title">Выбери способ оплаты</div>
+<div class="modal-pay-title">Выбери способ оплаты</div>
 
-            <!-- ⭐ КНОПКА TELEGRAM STARS — открывает НОВОГО БОТА @Dhfcuhh_bot -->
-            <a id="starsBtn" href="#" target="_blank" class="btn-stars">
-                <span class="btn-stars-icon">⭐</span>
-                Telegram Stars
-            </a>
+<!-- ⭐ КНОПКА TELEGRAM STARS — открывает НОВОГО БОТА @Dhfcuhh_bot -->
+<a id="starsBtn" href="#" target="_blank" class="btn-stars">
+<span class="btn-stars-icon">⭐</span>
+Telegram Stars
+</a>
 
-            <!-- ₿ КНОПКА CRYPTO BOT -->
-            <a id="cryptoBtn" href="#" target="_blank" class="btn-crypto">
-                <span class="btn-crypto-icon">₿</span>
-                Crypto Bot
-            </a>
+<!-- ₿ КНОПКА CRYPTO BOT -->
+<a id="cryptoBtn" href="#" target="_blank" class="btn-crypto">
+<span class="btn-crypto-icon">₿</span>
+Crypto Bot
+</a>
 
-            <!-- 💳 КНОПКА КАРТА — чат с @vladiksuka -->
-            <a id="cardBtn" href="https://t.me/vladiksuka" target="_blank" class="btn-card">
-                <span class="btn-card-icon">💳</span>
-                Карта / СБП
-            </a>
-            <div class="btn-card-hint">оплата через модератора — напишите сумму и способ</div>
+<!-- 💳 КНОПКА КАРТА — чат с @dimaPozic -->
+<a id="cardBtn" href="https://t.me/dimaPozic" target="_blank" class="btn-card">
+<span class="btn-card-icon">💳</span>
+Карта / СБП
+</a>
+<div class="btn-card-hint">оплата через модератора — напишите сумму и способ</div>
 
-            <!-- ↓↓↓ ЗАМЕНИЛ @yarikduh → @vladiksuka ↓↓↓ -->
-            <a href="https://t.me/vladiksuka" target="_blank" class="btn-support">Связаться с поддержкой</a>
-        </div>
-    </div>
+<!-- ↓↓↓ ЗАМЕНИЛ @yarikduh → @dimaPozic ↓↓↓ -->
+<a href="https://t.me/dimaPozic" target="_blank" class="btn-support">Связаться с поддержкой</a>
+</div>
+</div>
 </div>
 
 <script>
@@ -1028,44 +1028,44 @@ body {
 const starsBotTg = 'tg://resolve?domain=Dhfcuhh_bot&start=';
 
 const cryptoLinks = {
-    premium: 'https://t.me/send?start=IVLu9L55EyuU',
-    full:    'https://t.me/send?start=IViAp4ukbDB0',
-    medium:  'https://t.me/send?start=IV5Zsmfp9T3m',
-    small:   'https://t.me/send?start=IVHzNlxCJFiS'
+premium: 'https://t.me/send?start=IVLu9L55EyuU',
+full: 'https://t.me/send?start=IViAp4ukbDB0',
+medium: 'https://t.me/send?start=IV5Zsmfp9T3m',
+small: 'https://t.me/send?start=IVHzNlxCJFiS'
 };
 
 const starsPrices = {
-    premium: '750',
-    full:    '550',
-    medium:  '380',
-    small:   '200'
+premium: '750',
+full: '550',
+medium: '380',
+small: '200'
 };
 
 function openPay(tier, name, price) {
-    document.getElementById('modal-name').textContent = name;
-    document.getElementById('modal-sum').textContent = price + ' ₽';
-    
-    const starsCount = starsPrices[tier] || '';
-    if (starsCount) {
-        document.getElementById('modal-stars').textContent = `⭐ или ${starsCount} звёзд`;
-    }
-    
-    document.getElementById('starsBtn').href = starsBotTg + tier;
-    document.getElementById('cryptoBtn').href = cryptoLinks[tier];
-    
-    document.getElementById('payModal').classList.add('on');
+document.getElementById('modal-name').textContent = name;
+document.getElementById('modal-sum').textContent = price + ' ₽';
+
+const starsCount = starsPrices[tier] || '';
+if (starsCount) {
+document.getElementById('modal-stars').textContent = `⭐ или ${starsCount} звёзд`;
+}
+
+document.getElementById('starsBtn').href = starsBotTg + tier;
+document.getElementById('cryptoBtn').href = cryptoLinks[tier];
+
+document.getElementById('payModal').classList.add('on');
 }
 
 function closePay() {
-    document.getElementById('payModal').classList.remove('on');
+document.getElementById('payModal').classList.remove('on');
 }
 
 document.getElementById('payModal').addEventListener('click', e => {
-    if (e.target.id === 'payModal') closePay();
+if (e.target.id === 'payModal') closePay();
 });
 
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closePay();
+if (e.key === 'Escape') closePay();
 });
 </script>
 
