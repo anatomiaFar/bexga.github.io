@@ -817,7 +817,7 @@ white-space: nowrap;
 <div class="system-info">
 <b>Статус:</b> <span class="ok">Онлайн</span> · каталог v2.4.1<br>
 <b>Оплата:</b> <span class="ok">Crypto Bot</span> · Telegram Stars<br>
-<b>Также:</b> <span class="warn">Карты через модератора</span>
+<b>Также:</b> <span class="warn">Карты / СБП через Platega</span>
 </div>
 </header>
 
@@ -1010,12 +1010,12 @@ Telegram Stars
 Crypto Bot
 </a>
 
-<!-- 💳 КНОПКА КАРТА — чат с @dimaPozic -->
-<a id="cardBtn" href="https://t.me/dimaPozic" target="_blank" class="btn-card">
+<!-- 💳 КНОПКА КАРТА / СБП — оплата через Platega -->
+<button id="cardBtn" type="button" class="btn-card" onclick="payByPlatega()">
 <span class="btn-card-icon">💳</span>
 Карта / СБП
-</a>
-<div class="btn-card-hint">оплата через модератора — напишите сумму и способ</div>
+</button>
+<div class="btn-card-hint">безопасная оплата через Platega</div>
 
 <!-- ↓↓↓ ЗАМЕНИЛ @yarikduh → @dimaPozic ↓↓↓ -->
 <a href="https://t.me/dimaPozic" target="_blank" class="btn-support">Связаться с поддержкой</a>
@@ -1052,6 +1052,9 @@ document.getElementById('modal-stars').textContent = `⭐ или ${starsCount} �
 
 document.getElementById('starsBtn').href = starsBotTg + tier;
 document.getElementById('cryptoBtn').href = cryptoLinks[tier];
+document.getElementById('cardBtn').dataset.tier = tier;
+document.getElementById('cardBtn').dataset.name = name;
+document.getElementById('cardBtn').dataset.price = price;
 
 document.getElementById('payModal').classList.add('on');
 }
@@ -1063,6 +1066,46 @@ document.getElementById('payModal').classList.remove('on');
 document.getElementById('payModal').addEventListener('click', e => {
 if (e.target.id === 'payModal') closePay();
 });
+
+
+async function payByPlatega() {
+  const btn = document.getElementById('cardBtn');
+  const tier = btn.dataset.tier;
+  const name = btn.dataset.name;
+  const price = btn.dataset.price;
+
+  if (!tier || !price) {
+    alert('Сначала выберите пакет.');
+    return;
+  }
+
+  const oldText = btn.innerHTML;
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  btn.innerHTML = '<span class="btn-card-icon">⏳</span>Создание платежа...';
+
+  try {
+    const response = await fetch('/api/create-payment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tier })
+    });
+
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || !data.url) {
+      throw new Error(data.error || 'Не удалось создать платеж.');
+    }
+
+    window.location.href = data.url;
+  } catch (error) {
+    console.error(error);
+    alert(error.message || 'Ошибка при создании платежа.');
+    btn.innerHTML = oldText;
+    btn.disabled = false;
+    btn.style.opacity = '';
+  }
+}
 
 document.addEventListener('keydown', e => {
 if (e.key === 'Escape') closePay();
