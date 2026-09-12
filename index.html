@@ -1085,7 +1085,7 @@ async function payByPlatega() {
   btn.innerHTML = '<span class="btn-card-icon">⏳</span>Создание платежа...';
 
   try {
-    const response = await fetch('/api/create-payment', {
+    const response = await fetch('https://api.bexga.fun/api/create-payment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ tier })
